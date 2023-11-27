@@ -7,7 +7,7 @@ fetch("https://be-2-medan-14-production.up.railway.app/me", {
     credentials: "include",
 })
     .then((response) => {
-        console.log(response).status;
+        console.log(response.status);
         if (response.status) {
             ambilUser();
         } else {
