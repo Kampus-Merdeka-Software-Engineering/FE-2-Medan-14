@@ -76,7 +76,7 @@ const ambilUser = async () => {
 
 const logout = async () => {
     fetch("https://be-2-medan-14-production.up.railway.app/logout", {
-        method: "GET",
+        method: "DELETE",
         headers: {
             "Content-Type": "application/json",
         },
