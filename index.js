@@ -7,8 +7,7 @@ fetch("https://be-2-medan-14-production.up.railway.app/me", {
     credentials: "include",
 })
     .then((response) => {
-        console.log(response.status);
-        if (response.status) {
+        if (response.status === 200) {
             ambilUser();
         } else {
             login();
@@ -66,7 +65,7 @@ const ambilUser = async () => {
               </div>
               </li> 
             </ul>
-            <p></p>
+            <p></p><p></p><p></p>
             
           `;
         let el = parser.parseFromString(productStr, h);
