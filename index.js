@@ -11,7 +11,7 @@ fetch("https://be-2-medan-14-production.up.railway.app/me", {
         if (data) {
             console.log(data);
             // replace with your actual check for a successful login
-            if (data.status == "success") {
+            if (data.status == "OK") {
                 ambilUser();
             } else {
                 login();
