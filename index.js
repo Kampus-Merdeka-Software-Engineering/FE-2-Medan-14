@@ -6,16 +6,11 @@ fetch("https://be-2-medan-14-production.up.railway.app/me", {
     },
     credentials: "include",
 })
-    .then((response) => response.json())
-    .then((data) => {
-        if (data) {
-            console.log(data);
-            // replace with your actual check for a successful login
-            if (data.status == "OK") {
-                ambilUser();
-            } else {
-                login();
-            }
+    .then((response) => {
+        if (response.status) {
+            ambilUser();
+        } else {
+            login();
         }
     })
     .catch((error) => console.error("Error:", error));
