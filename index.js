@@ -9,6 +9,7 @@ fetch("https://be-2-medan-14-production.up.railway.app/me", {
     .then((response) => {
         if (response.status === 200) {
             ambilUser();
+            logout();
         } else {
             login();
         }
@@ -72,6 +73,23 @@ const ambilUser = async () => {
         let root = document.querySelector("div");
         root.appendChild(el.body.firstChild);
     });
+};
+
+const logout = async () => {
+    fetch("https://be-2-medan-14-production.up.railway.app/logout", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        credentials: "include",
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data) {
+                console.log(data);
+            }
+        })
+        .catch((error) => console.error("Error:", error));
 };
 
 // document.querySelector("form").addEventListener("submit", function (event) {
