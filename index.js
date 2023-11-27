@@ -64,12 +64,13 @@ const ambilUser = async () => {
                 <img src="data:image/png;base64, ${User.photo}">
               </a>
               <div class="specialty-info">
-                <h2>${User.name}</h2>
-                <p>${User.id}</p>
+                <h2>Id: ${User.id} - ${User.name}</h2>
+                <p>${User.phone}</p>
+                <p>${User.email}</p>
               </div>
               </li> 
             </ul>
-            <hr />
+            <p></p>
             
           `;
         let el = parser.parseFromString(productStr, h);
