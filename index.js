@@ -36,6 +36,8 @@ const login = async () => {
             }
         })
         .catch((error) => console.error("Error:", error));
+
+    window.location.reload();
 };
 
 const ambilUser = async () => {
@@ -89,6 +91,8 @@ const logout = async () => {
             }
         })
         .catch((error) => console.error("Error:", error));
+
+    window.location.reload();
 };
 
 // document.querySelector("form").addEventListener("submit", function (event) {
