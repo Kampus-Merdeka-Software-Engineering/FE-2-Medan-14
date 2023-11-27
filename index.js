@@ -22,7 +22,13 @@ fetch("https://be-2-medan-14-production.up.railway.app/login", {
     .catch((error) => console.error("Error:", error));
 
 const ambilUser = async () => {
-    const response = await fetch("https://be-2-medan-14-production.up.railway.app/users");
+    const response = await fetch("https://be-2-medan-14-production.up.railway.app/users", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        credentials: "include",
+    });
     const User = await response.json();
 
     const h = "text/html";
