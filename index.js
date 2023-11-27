@@ -9,9 +9,8 @@ fetch("https://be-2-medan-14-production.up.railway.app/me", {
     .then((response) => {
         if (response.status === 200) {
             ambilUser();
-            logout();
         } else {
-            login();
+            alert("Anda belum login");
         }
     })
     .catch((error) => console.error("Error:", error));
