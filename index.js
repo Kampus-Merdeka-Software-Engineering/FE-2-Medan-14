@@ -1,0 +1,84 @@
+const formData = {
+    email: "admin@gmail.com",
+    password: "admin",
+};
+
+fetch("https://be-2-medan-14-production.up.railway.app/login", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify(formData),
+})
+    .then((response) => response.json())
+    .then((data) => {
+        if (data) {
+            console.log(data);
+            // replace with your actual check for a successful login
+            ambilUser();
+        }
+    })
+    .catch((error) => console.error("Error:", error));
+
+const ambilUser = async () => {
+    const response = await fetch("https://be-2-medan-14-production.up.railway.app/users");
+    const User = await response.json();
+
+    const h = "text/html";
+    let parser = new DOMParser();
+
+    User.forEach((User) => {
+        let productStr = `
+            <ul class="specialty-list">
+              <li>
+              <a href="update.html?id=${User.id}">
+                <img src="data:image/png;base64, ${User.photo}">
+              </a>
+              <div class="specialty-info">
+                <h2>${User.name}</h2>
+                <p>${User.id}</p>
+              </div>
+              </li> 
+            </ul>
+            <hr />
+            
+          `;
+        let el = parser.parseFromString(productStr, h);
+        let root = document.querySelector("div");
+        root.appendChild(el.body.firstChild);
+    });
+};
+
+// document.querySelector("form").addEventListener("submit", function (event) {
+//     event.preventDefault(); // Prevent the form from submitting normally
+
+//     let title = "event.target.elements.title.value";
+//     let phone = "12345";
+//     let email = "12345";
+//     let password = "12345";
+//     let file = event.target.elements.file.files[0];
+
+//     let reader = new FileReader();
+//     reader.onloadend = function () {
+//         let base64String = reader.result;
+//         return base64String; // Logs the base64 string
+//     };
+
+//     let formData = new FormData();
+//     formData.append("name", title);
+//     formData.append("phone", phone);
+//     formData.append("email", email);
+//     formData.append("password", password);
+//     // formData.append("photo", reader.readAsDataURL(file));
+
+//     console.log(title);
+
+//     fetch("http://localhost:5000/users", {
+//         method: "POST",
+//         body: formData,
+//     })
+//         .then((response) => response.json())
+//         .then((data) => console.log(data))
+//         .catch((error) => console.error("Error:", error));
+// });
