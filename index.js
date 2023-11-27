@@ -1,25 +1,47 @@
-const formData = {
-    email: "admin@gmail.com",
-    password: "admin",
-};
-
-fetch("https://be-2-medan-14-production.up.railway.app/login", {
-    method: "POST",
+// check login
+fetch("https://be-2-medan-14-production.up.railway.app/me", {
+    method: "GET",
     headers: {
         "Content-Type": "application/json",
     },
     credentials: "include",
-    body: JSON.stringify(formData),
 })
     .then((response) => response.json())
     .then((data) => {
         if (data) {
             console.log(data);
             // replace with your actual check for a successful login
-            ambilUser();
+            if (data.status == "success") {
+                ambilUser();
+            } else {
+                login();
+            }
         }
     })
     .catch((error) => console.error("Error:", error));
+
+const formData = {
+    email: "admin@gmail.com",
+    password: "admin",
+};
+
+const login = async () => {
+    fetch("https://be-2-medan-14-production.up.railway.app/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(formData),
+    })
+        .then((response) => response.json())
+        .then((data) => {
+            if (data) {
+                console.log(data);
+            }
+        })
+        .catch((error) => console.error("Error:", error));
+};
 
 const ambilUser = async () => {
     const response = await fetch("https://be-2-medan-14-production.up.railway.app/users", {
