@@ -44,6 +44,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
         setErrorBox("Please fill in the form correctly");
     } else {
+        // for debugging
         // window.location.href = "home.html";
 
         //  login
