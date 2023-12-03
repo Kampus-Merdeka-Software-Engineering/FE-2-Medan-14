@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>BookID</title>
+        <meta name="title" content="BookID" />
+
+        <link rel="shortcut icon" href="img/logo.png" type="image/svg+xml" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet" />
+
+        <link rel="stylesheet" href="css/stylerooms.css" />
+
+        <script src="https://kit.fontawesome.com/6f3e2f204d.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header class="header" data-header>
+            <div class="container">
+                <a href="#" class="logo">
+                    <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-light" />
+
+                    <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-dark" />
+                </a>
+
+                <nav class="navbar" data-navbar>
+                    <div class="navbar-top">
+                        <a href="#" class="logo">
+                            <img src="img/logo.png" width="74" height="24" alt="BookID home" />
+                        </a>
+
+                        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                        </button>
+                    </div>
+
+                    <ul class="navbar-list">
+                        <li>
+                            <a href="home.html" class="navbar-link">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="explore.html" class="navbar-link">Explore</a>
+                        </li>
+
+                        <li>
+                            <a href="rooms.html" class="navbar-link">Rooms</a>
+                        </li>
+
+                        <li>
+                            <a href="bookings.html" class="navbar-link">Bookings</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html" class="navbar-link">About</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <img src="img/user.png" alt="" class="user-pic" onclick="toggleMenu()" />
+
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="img/user.png" alt="" />
+                            <h3>Nama User</h3>
+                        </div>
+                        <hr />
+
+                        <a href="editprofile.html" class="sub-menu-link">
+                            <img src="img/profile.png" />
+                            <p>Edit Profile</p>
+                            <span>></span>
+                        </a>
+
+                        <a href="#" class="sub-menu-link">
+                            <img src="img/help.png" />
+                            <p>Help & Support</p>
+                            <span>></span>
+                        </a>
+
+                        <a href="index.html" class="sub-menu-link">
+                            <img src="img/logout.png" />
+                            <p>Logout</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <div class="overlay" data-nav-toggler data-overlay></div>
+            </div>
+        </header>
+
+        <main>
+            <article>
+                <div class="container">
+                    <div class="box-container">
+                        <div class="box">
+                            <div class="property-card">
+                                <figure class="card-banner">
+                                    <a href="#">
+                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                    </a>
+
+                                    <div class="card-badge green">For Rent</div>
+                                </figure>
+
+                                <div class="card-content">
+                                    <div class="card-price">
+                                        <p class="card-discount-price">
+                                            <span class="discount">10%</span>
+                                            <span class="normal-price">Rp2.000.000</span>
+                                        </p>
+                                        <h4>Rp1.500.000/Malam</h4>
+                                    </div>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">New Apartment Nice View</a>
+                                        <p class="card-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span class="rating-text">5</span>
+                                            <span class="total-booking">(1000)</span>
+                                        </p>
+                                    </h3>
+
+                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
+
+                                    <ul class="card-list">
+                                        <li class="card-item">
+                                            <strong>3</strong>
+
+                                            <ion-icon name="bed-outline"></ion-icon>
+
+                                            <span>Bedrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>2</strong>
+
+                                            <ion-icon name="man-outline"></ion-icon>
+
+                                            <span>Bathrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>3450</strong>
+
+                                            <ion-icon name="square-outline"></ion-icon>
+
+                                            <span>Square Ft</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-footer">
+                                    <a href="detailrooms.html">
+                                        <button class="card-button">Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="property-card">
+                                <figure class="card-banner">
+                                    <a href="#">
+                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                    </a>
+
+                                    <div class="card-badge green">For Rent</div>
+                                </figure>
+
+                                <div class="card-content">
+                                    <div class="card-price">
+                                        <p class="card-discount-price">
+                                            <span class="discount">10%</span>
+                                            <span class="normal-price">Rp2.000.000</span>
+                                        </p>
+                                        <h4>Rp1.500.000/Malam</h4>
+                                    </div>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">New Apartment Nice View</a>
+                                        <p class="card-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span class="rating-text">5</span>
+                                            <span class="total-booking">(1000)</span>
+                                        </p>
+                                    </h3>
+
+                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
+
+                                    <ul class="card-list">
+                                        <li class="card-item">
+                                            <strong>3</strong>
+
+                                            <ion-icon name="bed-outline"></ion-icon>
+
+                                            <span>Bedrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>2</strong>
+
+                                            <ion-icon name="man-outline"></ion-icon>
+
+                                            <span>Bathrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>3450</strong>
+
+                                            <ion-icon name="square-outline"></ion-icon>
+
+                                            <span>Square Ft</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-footer">
+                                    <a href="detailrooms.html">
+                                        <button class="card-button">Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="property-card">
+                                <figure class="card-banner">
+                                    <a href="#">
+                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                    </a>
+
+                                    <div class="card-badge green">For Rent</div>
+                                </figure>
+
+                                <div class="card-content">
+                                    <div class="card-price">
+                                        <p class="card-discount-price">
+                                            <span class="discount">10%</span>
+                                            <span class="normal-price">Rp2.000.000</span>
+                                        </p>
+                                        <h4>Rp1.500.000/Malam</h4>
+                                    </div>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">New Apartment Nice View</a>
+                                        <p class="card-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span class="rating-text">5</span>
+                                            <span class="total-booking">(1000)</span>
+                                        </p>
+                                    </h3>
+
+                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
+
+                                    <ul class="card-list">
+                                        <li class="card-item">
+                                            <strong>3</strong>
+
+                                            <ion-icon name="bed-outline"></ion-icon>
+
+                                            <span>Bedrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>2</strong>
+
+                                            <ion-icon name="man-outline"></ion-icon>
+
+                                            <span>Bathrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>3450</strong>
+
+                                            <ion-icon name="square-outline"></ion-icon>
+
+                                            <span>Square Ft</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-footer">
+                                    <a href="detailrooms.html">
+                                        <button class="card-button">Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="property-card">
+                                <figure class="card-banner">
+                                    <a href="#">
+                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                    </a>
+
+                                    <div class="card-badge green">For Rent</div>
+                                </figure>
+
+                                <div class="card-content">
+                                    <div class="card-price">
+                                        <p class="card-discount-price">
+                                            <span class="discount">10%</span>
+                                            <span class="normal-price">Rp2.000.000</span>
+                                        </p>
+                                        <h4>Rp1.500.000/Malam</h4>
+                                    </div>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">New Apartment Nice View</a>
+                                        <p class="card-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span class="rating-text">5</span>
+                                            <span class="total-booking">(1000)</span>
+                                        </p>
+                                    </h3>
+
+                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
+
+                                    <ul class="card-list">
+                                        <li class="card-item">
+                                            <strong>3</strong>
+
+                                            <ion-icon name="bed-outline"></ion-icon>
+
+                                            <span>Bedrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>2</strong>
+
+                                            <ion-icon name="man-outline"></ion-icon>
+
+                                            <span>Bathrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>3450</strong>
+
+                                            <ion-icon name="square-outline"></ion-icon>
+
+                                            <span>Square Ft</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-footer">
+                                    <a href="detailrooms.html">
+                                        <button class="card-button">Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="property-card">
+                                <figure class="card-banner">
+                                    <a href="#">
+                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                    </a>
+
+                                    <div class="card-badge green">For Rent</div>
+                                </figure>
+
+                                <div class="card-content">
+                                    <div class="card-price">
+                                        <p class="card-discount-price">
+                                            <span class="discount">10%</span>
+                                            <span class="normal-price">Rp2.000.000</span>
+                                        </p>
+                                        <h4>Rp1.500.000/Malam</h4>
+                                    </div>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">New Apartment Nice View</a>
+                                        <p class="card-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span class="rating-text">5</span>
+                                            <span class="total-booking">(1000)</span>
+                                        </p>
+                                    </h3>
+
+                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
+
+                                    <ul class="card-list">
+                                        <li class="card-item">
+                                            <strong>3</strong>
+
+                                            <ion-icon name="bed-outline"></ion-icon>
+
+                                            <span>Bedrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>2</strong>
+
+                                            <ion-icon name="man-outline"></ion-icon>
+
+                                            <span>Bathrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>3450</strong>
+
+                                            <ion-icon name="square-outline"></ion-icon>
+
+                                            <span>Square Ft</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-footer">
+                                    <a href="detailrooms.html">
+                                        <button class="card-button">Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="property-card">
+                                <figure class="card-banner">
+                                    <a href="#">
+                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                    </a>
+
+                                    <div class="card-badge green">For Rent</div>
+                                </figure>
+
+                                <div class="card-content">
+                                    <div class="card-price">
+                                        <p class="card-discount-price">
+                                            <span class="discount">10%</span>
+                                            <span class="normal-price">Rp2.000.000</span>
+                                        </p>
+                                        <h4>Rp1.500.000/Malam</h4>
+                                    </div>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">New Apartment Nice View</a>
+                                        <p class="card-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span class="rating-text">5</span>
+                                            <span class="total-booking">(1000)</span>
+                                        </p>
+                                    </h3>
+
+                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
+
+                                    <ul class="card-list">
+                                        <li class="card-item">
+                                            <strong>3</strong>
+
+                                            <ion-icon name="bed-outline"></ion-icon>
+
+                                            <span>Bedrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>2</strong>
+
+                                            <ion-icon name="man-outline"></ion-icon>
+
+                                            <span>Bathrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>3450</strong>
+
+                                            <ion-icon name="square-outline"></ion-icon>
+
+                                            <span>Square Ft</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-footer">
+                                    <a href="detailrooms.html">
+                                        <button class="card-button">Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="property-card">
+                                <figure class="card-banner">
+                                    <a href="#">
+                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                    </a>
+
+                                    <div class="card-badge green">For Rent</div>
+                                </figure>
+
+                                <div class="card-content">
+                                    <div class="card-price">
+                                        <p class="card-discount-price">
+                                            <span class="discount">10%</span>
+                                            <span class="normal-price">Rp2.000.000</span>
+                                        </p>
+                                        <h4>Rp1.500.000/Malam</h4>
+                                    </div>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">New Apartment Nice View</a>
+                                        <p class="card-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span class="rating-text">5</span>
+                                            <span class="total-booking">(1000)</span>
+                                        </p>
+                                    </h3>
+
+                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
+
+                                    <ul class="card-list">
+                                        <li class="card-item">
+                                            <strong>3</strong>
+
+                                            <ion-icon name="bed-outline"></ion-icon>
+
+                                            <span>Bedrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>2</strong>
+
+                                            <ion-icon name="man-outline"></ion-icon>
+
+                                            <span>Bathrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>3450</strong>
+
+                                            <ion-icon name="square-outline"></ion-icon>
+
+                                            <span>Square Ft</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-footer">
+                                    <a href="detailrooms.html">
+                                        <button class="card-button">Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="property-card">
+                                <figure class="card-banner">
+                                    <a href="#">
+                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                    </a>
+
+                                    <div class="card-badge green">For Rent</div>
+                                </figure>
+
+                                <div class="card-content">
+                                    <div class="card-price">
+                                        <p class="card-discount-price">
+                                            <span class="discount">10%</span>
+                                            <span class="normal-price">Rp2.000.000</span>
+                                        </p>
+                                        <h4>Rp1.500.000/Malam</h4>
+                                    </div>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">New Apartment Nice View</a>
+                                        <p class="card-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span class="rating-text">5</span>
+                                            <span class="total-booking">(1000)</span>
+                                        </p>
+                                    </h3>
+
+                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
+
+                                    <ul class="card-list">
+                                        <li class="card-item">
+                                            <strong>3</strong>
+
+                                            <ion-icon name="bed-outline"></ion-icon>
+
+                                            <span>Bedrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>2</strong>
+
+                                            <ion-icon name="man-outline"></ion-icon>
+
+                                            <span>Bathrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>3450</strong>
+
+                                            <ion-icon name="square-outline"></ion-icon>
+
+                                            <span>Square Ft</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-footer">
+                                    <a href="detailrooms.html">
+                                        <button class="card-button">Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="box">
+                            <div class="property-card">
+                                <figure class="card-banner">
+                                    <a href="#">
+                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                    </a>
+
+                                    <div class="card-badge green">For Rent</div>
+                                </figure>
+
+                                <div class="card-content">
+                                    <div class="card-price">
+                                        <p class="card-discount-price">
+                                            <span class="discount">10%</span>
+                                            <span class="normal-price">Rp2.000.000</span>
+                                        </p>
+                                        <h4>Rp1.500.000/Malam</h4>
+                                    </div>
+
+                                    <h3 class="h3 card-title">
+                                        <a href="#">New Apartment Nice View</a>
+                                        <p class="card-rating">
+                                            <i class="fa-solid fa-star"></i>
+                                            <span class="rating-text">5</span>
+                                            <span class="total-booking">(1000)</span>
+                                        </p>
+                                    </h3>
+
+                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
+
+                                    <ul class="card-list">
+                                        <li class="card-item">
+                                            <strong>3</strong>
+
+                                            <ion-icon name="bed-outline"></ion-icon>
+
+                                            <span>Bedrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>2</strong>
+
+                                            <ion-icon name="man-outline"></ion-icon>
+
+                                            <span>Bathrooms</span>
+                                        </li>
+
+                                        <li class="card-item">
+                                            <strong>3450</strong>
+
+                                            <ion-icon name="square-outline"></ion-icon>
+
+                                            <span>Square Ft</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card-footer">
+                                    <a href="detailrooms.html">
+                                        <button class="card-button">Detail</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end div box -->
+                    </div>
+
+                    <div class="button-more">
+                        <div id="load-more">load more</div>
+                    </div>
+                </div>
+            </article>
+        </main>
+
+        <footer class="footer">
+            <div class="container grid-list">
+                <ul class="footer-list">
+                    <li>
+                        <p class="h4 footer-list-title">More Info</p>
+                    </li>
+
+                    <li>
+                        <address class="footer-text">Dimana-mana hatiku senang</address>
+                    </li>
+
+                    <li>
+                        <a href="mailto:info@email.com" class="footer-link">info@email.com</a>
+                    </li>
+
+                    <li>
+                        <a href="tel:001234567890" class="footer-link">00 (123) 456 78 90</a>
+                    </li>
+
+                    <a href="#" class="logo">
+                        <img src="img/logo.png" width="74" height="24" style="padding-top: 20px" alt="Logo" />
+                    </a>
+                </ul>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="h4 footer-list-title">See More</p>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Explore</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Rooms</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">Rooms</a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="footer-link">About</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
+        <script>
+            let subMenu = document.getElementById("subMenu");
+
+            function toggleMenu() {
+                subMenu.classList.toggle("open-menu");
+            }
+
+            let loadMoreBtn = document.querySelector("#load-more");
+            let currentItem = 3;
+
+            loadMoreBtn.onclick = () => {
+                let boxes = [...document.querySelectorAll(".container .box-container .box")];
+                for (var i = currentItem; i < currentItem + 3; i++) {
+                    boxes[i].style.display = "inline-block";
+                }
+                currentItem += 3;
+
+                if (currentItem >= boxes.length) {
+                    loadMoreBtn.style.display = "none";
+                }
+            };
+        </script>
+
+        <script src="js/index.js"></script>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
+</html>

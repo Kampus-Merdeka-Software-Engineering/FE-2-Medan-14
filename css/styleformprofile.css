@@ -1,0 +1,341 @@
+/* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+nav {
+    background: hsla(10, 68%, 59%, 1);
+    width: 100%;
+    padding: 10px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 100px;
+}
+
+.logo {
+    width: 120px;
+}
+
+.user-pic {
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+nav ul {
+    width: 100%;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a {
+    color: #ffff;
+    text-decoration: none;
+}
+
+.sub-menu-wrap {
+    position: absolute;
+    top: 100%;
+    right: 10%;
+    width: 320px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+    max-height: 400px;
+}
+
+.sub-menu {
+    background: #fff;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info h3 {
+    font-weight: 500;
+}
+
+.user-info img {
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.sub-menu hr {
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background: #ccc;
+    margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #525252;
+    margin: 12px 0;
+}
+
+.sub-menu-link p {
+    width: 100%;
+}
+
+.sub-menu-link img {
+    width: 40px;
+    background: #e5e5e5;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.sub-menu-link span {
+    font-size: 22px;
+    transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span {
+    transform: translateX(5px);
+}
+
+.sub-menu-link:hover p {
+    font-weight: 600;
+}
+
+.form-login {
+    min-height: 80vh;
+    margin-top: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(255, 255, 255);
+}
+
+.container {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.container header {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+}
+.container .form {
+    margin-top: 30px;
+}
+.form .input-box {
+    width: 100%;
+    margin-top: 33px;
+}
+.input-box label,
+.input-box-photo label {
+    color: #333;
+}
+.form :where(.input-box input, .select-box) {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    color: #707070;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+.input-box input:focus {
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+    display: flex;
+    column-gap: 15px;
+}
+.form .gender-box {
+    margin-top: 20px;
+}
+.gender-box h3 {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+.form :where(.gender-option, .gender) {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+    flex-wrap: wrap;
+}
+.form .gender {
+    column-gap: 5px;
+}
+.gender input {
+    accent-color: hsla(10, 68%, 59%, 1);
+}
+.form :where(.gender input, .gender label) {
+    cursor: pointer;
+}
+.gender label {
+    color: #707070;
+}
+.address :where(input, .select-box) {
+    margin-top: 15px;
+}
+.select-box select {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    color: #707070;
+    font-size: 1rem;
+}
+.form button {
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: hsla(10, 68%, 59%, 1);
+    border-radius: 5em;
+}
+.form button:hover {
+    background: rgb(88, 56, 250);
+}
+
+.signup {
+    padding-top: 6px;
+    font-size: 14px;
+    text-align: center;
+}
+.signup a {
+    color: #009579;
+    cursor: pointer;
+}
+.signup a:hover {
+    text-decoration: underline;
+}
+
+/*Responsive*/
+@media screen and (max-width: 500px) {
+    .form .column {
+        flex-wrap: wrap;
+    }
+    .form :where(.gender-option, .gender) {
+        row-gap: 15px;
+    }
+}
+
+.input-box-photo {
+    position: relative;
+    text-align: center;
+}
+
+.input-box-photo img {
+    border: 1px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 20em; /* Set to desired width */
+    height: 20em; /* Set to desired height */
+    object-fit: cover;
+    margin-top: 1.5%;
+}
+
+.input-box-photo img,
+.input-box-photo small {
+    padding: 0.5%;
+}
+
+.input-box-photo input {
+    display: none;
+}
+
+.input-box.success input,
+.input-box-photo.success img {
+    border-color: #2ecc71;
+}
+
+.input-box.error input,
+.input-box-photo.error img {
+    border-color: #e74c3c;
+}
+
+.input-box i {
+    visibility: hidden;
+    position: absolute;
+    margin-top: 3.5%;
+    right: 6%;
+    font-size: 1.2rem;
+}
+
+.input-box.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+}
+
+.input-box.error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.input-box small {
+    visibility: hidden;
+    position: absolute;
+    margin-top: 8.5%;
+    left: 3.7%;
+}
+
+.input-box-photo small {
+    visibility: hidden;
+}
+
+.input-box.error small,
+.input-box-photo.error small {
+    color: #e74c3c;
+    visibility: visible;
+}
+
+.error-box {
+    margin-top: 3%;
+    position: relative;
+    background: hsla(10, 68%, 59%, 1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+.error-message {
+    padding: 2.5%;
+}
