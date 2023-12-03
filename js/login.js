@@ -46,21 +46,21 @@ document.getElementById("submit").addEventListener("click", function (event) {
     } else {
         window.location.href = "home.html";
 
-        // //  login
-        // login(email.value, password.value)
-        //     .then((data) => {
-        //         // If login is successful, redirect to home page
-        //         window.location.href = "home.html";
-        //     })
-        //     .catch((error) => {
-        //         // If there's an error, display it
-        //         setErrorBox(error.message);
-        //         setError(email, error.message);
-        //         setError(password, error.message);
+        //  login
+        login(email.value, password.value)
+            .then((data) => {
+                // If login is successful, redirect to home page
+                window.location.href = "home.html";
+            })
+            .catch((error) => {
+                // If there's an error, display it
+                setErrorBox(error.message);
+                setError(email, error.message);
+                setError(password, error.message);
 
-        //         checker_email = false;
-        //         checker_password = false;
-        //     });
+                checker_email = false;
+                checker_password = false;
+            });
     }
 });
 
