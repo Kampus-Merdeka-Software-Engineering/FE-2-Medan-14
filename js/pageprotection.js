@@ -1,5 +1,7 @@
 checkLogin().then((isLoggedIn) => {
     if (!isLoggedIn) {
+        alert("You are not logged in. You will be redirected to the login page.");
+
         window.location.href = "login.html";
     }
 
