@@ -61,7 +61,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
                     // If login is successful, redirect to home page
                     window.location.href = "home.html";
                 } else {
-                    setErrorBox(response.message);
+                    setErrorBox(response.msg);
                     setError(email, response.message);
                     setError(password, response.message);
                     checker_email = false;
