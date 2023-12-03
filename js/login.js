@@ -61,11 +61,9 @@ document.getElementById("submit").addEventListener("click", function (event) {
                     // If login is successful, redirect to home page
                     window.location.href = "home.html";
                 } else {
-                    response.json().then((data) => {
-                        setErrorBox(data.message);
-                        setError(email, data.message);
-                        setError(password, data.message);
-                    });
+                    setErrorBox(response.message);
+                    setError(email, response.message);
+                    setError(password, response.message);
                     checker_email = false;
                     checker_password = false;
                 }
