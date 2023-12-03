@@ -47,17 +47,25 @@ document.getElementById("submit").addEventListener("click", function (event) {
         // window.location.href = "home.html";
 
         //  login
-        login(email.value, password.value)
+        fetch(loginUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ email: email.value, password: password.value }),
+            credentials: "include",
+        })
             .then((response) => {
                 console.log(response.status); // Log the response status code
                 if (response.ok) {
                     // If login is successful, redirect to home page
                     window.location.href = "home.html";
                 } else {
-                    setErrorBox(response.message);
-                    setError(email, response.message);
-                    setError(password, response.message);
-
+                    response.json().then((data) => {
+                        setErrorBox(data.message);
+                        setError(email, data.message);
+                        setError(password, data.message);
+                    });
                     checker_email = false;
                     checker_password = false;
                 }
@@ -73,19 +81,3 @@ document.getElementById("submit").addEventListener("click", function (event) {
             });
     }
 });
-
-async function login(email, password) {
-    const response = await fetch(loginUrl, {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-    });
-
-    if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    return response;
-}
