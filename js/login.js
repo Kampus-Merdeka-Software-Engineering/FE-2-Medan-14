@@ -74,20 +74,18 @@ document.getElementById("submit").addEventListener("click", function (event) {
     }
 });
 
-function login(email, password) {
-    return fetch(loginUrl, {
+async function login(email, password) {
+    const response = await fetch(loginUrl, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
-        credentials: "include", // include, same-origin, *omit
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            if (data.error) {
-                throw new Error(data.error);
-            }
-            return data;
-        });
+    });
+
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return response;
 }
