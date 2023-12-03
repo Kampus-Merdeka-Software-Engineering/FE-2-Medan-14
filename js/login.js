@@ -56,7 +56,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
             credentials: "include",
         })
             .then((response) => {
-                console.log(response.status); // Log the response status code
+                console.log(response); // Log the response status code
                 if (response.ok) {
                     // If login is successful, redirect to home page
                     window.location.href = "home.html";
