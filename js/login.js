@@ -50,7 +50,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
         login(email.value, password.value)
             .then((response) => {
                 console.log(response.status); // Log the response status code
-                if (response.status === 200) {
+                if (response.ok) {
                     // If login is successful, redirect to home page
                     window.location.href = "home.html";
                 } else {
