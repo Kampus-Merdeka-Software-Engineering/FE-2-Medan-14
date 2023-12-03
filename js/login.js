@@ -48,9 +48,19 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
         //  login
         login(email.value, password.value)
-            .then((data) => {
-                // If login is successful, redirect to home page
-                window.location.href = "home.html";
+            .then((response) => {
+                console.log(response.status); // Log the response status code
+                if (response.status === 200) {
+                    // If login is successful, redirect to home page
+                    window.location.href = "home.html";
+                } else {
+                    setErrorBox(response.message);
+                    setError(email, response.message);
+                    setError(password, response.message);
+
+                    checker_email = false;
+                    checker_password = false;
+                }
             })
             .catch((error) => {
                 // If there's an error, display it
