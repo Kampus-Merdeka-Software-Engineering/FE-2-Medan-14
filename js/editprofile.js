@@ -217,42 +217,41 @@ document.getElementById("submit").addEventListener("click", function (event) {
         // for debugging
         // window.location.href = "home.html";
 
-        let formData = new FormData();
+        let data = {};
 
         if (nameUser.value !== profileInfo.name) {
-            formData.append("name", nameUser.value);
-            console.log(nameUser.value);
+            data.name = nameUser.value;
         }
 
         if (phone.value !== profileInfo.phone) {
-            formData.append("phone", phone.value);
-            console.log(phone.value);
+            data.phone = phone.value;
         }
 
         if (email.value !== profileInfo.email) {
-            formData.append("email", email.value);
-            console.log(email.value);
+            data.email = email.value;
         }
 
         if (password.value !== "") {
-            formData.append("password", password.value);
-            formData.append("confPassword", confPassword.value);
-            console.log(password.value);
+            data.password = password.value;
+            data.confPassword = confPassword.value;
         }
 
         if (base64String !== profileInfo.photo) {
-            formData.append("photo", base64String);
-            console.log(base64String);
+            data.photo = base64String;
         }
 
-        console.log(formData);
+        console.log(data);
 
-        // Use fetch to send the form data
+        // Use fetch to send the data as JSON
         fetch(updateProfileUrl, {
             method: "PATCH",
-            body: formData,
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
             credentials: "include",
         })
+            // rest of your code
             .then((response) => {
                 if (response.ok) {
                     // window.location.href = "home.html";
