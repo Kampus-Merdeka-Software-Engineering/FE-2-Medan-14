@@ -291,8 +291,8 @@ nav ul li a {
 .input-box i {
     visibility: hidden;
     position: absolute;
-    margin-top: 3.5%;
-    right: 6%;
+    margin-top: 24px;
+    right: 35px;
     font-size: 1.2rem;
 }
 
@@ -309,8 +309,8 @@ nav ul li a {
 .input-box small {
     visibility: hidden;
     position: absolute;
-    margin-top: 8.5%;
-    left: 3.7%;
+    margin-top: 58px;
+    left: 28px;
 }
 
 .input-box-photo small {

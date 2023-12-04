@@ -146,12 +146,8 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
     if (checker_name == false || checker_phone == false || checker_email == false || checker_password == false || checker_confPassword == false) {
         // error handling
-
         setErrorBox("Please fill in the form correctly");
     } else {
-        // for debugging
-        // window.location.href = "home.html";
-
         // signup
         fetch(registerUrl, {
             method: "POST",
@@ -170,7 +166,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
             .then((response) => {
                 console.log(response.status); // Log the response status code
                 if (response.ok) {
-                    // If signup is successful, redirect to home page
+                    // If signup is successful, redirect to login page
                     window.location.href = "login.html";
                 } else {
                     response.json().then((data) => {
@@ -186,6 +182,12 @@ document.getElementById("submit").addEventListener("click", function (event) {
                     checker_email = false;
                     checker_password = false;
                     checker_confPassword = false;
+
+                    nameUser.value = "";
+                    phone.value = "";
+                    email.value = "";
+                    password.value = "";
+                    confPassword.value = "";
                 }
             })
             .catch((error) => {
@@ -202,6 +204,12 @@ document.getElementById("submit").addEventListener("click", function (event) {
                 checker_email = false;
                 checker_password = false;
                 checker_confPassword = false;
+
+                nameUser.value = "";
+                phone.value = "";
+                email.value = "";
+                password.value = "";
+                confPassword.value = "";
             });
     }
 });

@@ -220,12 +220,8 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
     if (checker_name == false || checker_phone == false || checker_email == false || checker_password == false || checker_confPassword == false || checker_photo == false) {
         // error handling
-
         setErrorBox("Please fill in the form correctly");
     } else {
-        // for debugging
-        // window.location.href = "home.html";
-
         let data = {};
 
         if (nameUser.value !== profileInfo.name) {
@@ -261,8 +257,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
             // rest of your code
             .then((response) => {
                 if (response.ok) {
-                    // window.location.href = "home.html";
-                    console.log(response);
+                    window.location.href = "profile.html";
                 } else {
                     response.json().then((data) => {
                         setErrorBox(data.msg);
@@ -279,6 +274,13 @@ document.getElementById("submit").addEventListener("click", function (event) {
                     checker_password = false;
                     checker_confPassword = false;
                     checker_photo = false;
+
+                    nameUser.value = profileInfo.name;
+                    phone.value = profileInfo.phone;
+                    email.value = profileInfo.email;
+                    password.value = "";
+                    confPassword.value = "";
+                    photoPreview.src = `data:image/png;base64,${profileInfo.photo}`;
                 }
             })
             .catch((error) => {
@@ -297,6 +299,13 @@ document.getElementById("submit").addEventListener("click", function (event) {
                 checker_password = false;
                 checker_confPassword = false;
                 checker_photo = false;
+
+                nameUser.value = profileInfo.name;
+                phone.value = profileInfo.phone;
+                email.value = profileInfo.email;
+                password.value = "";
+                confPassword.value = "";
+                photoPreview.src = `data:image/png;base64,${profileInfo.photo}`;
             });
     }
 });

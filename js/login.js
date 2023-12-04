@@ -41,12 +41,8 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
     if (checker_email == false || checker_password == false) {
         // error handling
-
         setErrorBox("Please fill in the form correctly");
     } else {
-        // for debugging
-        // window.location.href = "home.html";
-
         //  login
         fetch(loginUrl, {
             method: "POST",
@@ -69,6 +65,9 @@ document.getElementById("submit").addEventListener("click", function (event) {
                     });
                     checker_email = false;
                     checker_password = false;
+
+                    email.value = "";
+                    password.value = "";
                 }
             })
             .catch((error) => {
@@ -79,6 +78,9 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
                 checker_email = false;
                 checker_password = false;
+
+                email.value = "";
+                password.value = "";
             });
     }
 });
