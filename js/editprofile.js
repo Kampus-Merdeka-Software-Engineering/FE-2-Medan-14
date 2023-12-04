@@ -187,7 +187,9 @@ password.addEventListener("keyup", function (e) {
 
             checker_confPassword = false;
             checker_password = false;
-        } else if (confPassword.value === password.value) {
+        }
+
+        if (confPassword.value === password.value) {
             setSuccess(confPassword);
             checker_confPassword = true;
         }
