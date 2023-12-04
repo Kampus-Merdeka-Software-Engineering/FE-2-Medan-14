@@ -221,23 +221,28 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
         if (nameUser.value !== profileInfo.name) {
             formData.append("name", nameUser.value);
+            console.log(nameUser.value);
         }
 
         if (phone.value !== profileInfo.phone) {
             formData.append("phone", phone.value);
+            console.log(phone.value);
         }
 
         if (email.value !== profileInfo.email) {
             formData.append("email", email.value);
+            console.log(email.value);
         }
 
         if (password.value !== "") {
             formData.append("password", password.value);
             formData.append("confPassword", confPassword.value);
+            console.log(password.value);
         }
 
         if (base64String !== profileInfo.photo) {
             formData.append("photo", base64String);
+            console.log(base64String);
         }
 
         console.log(formData);
@@ -251,6 +256,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
             .then((response) => {
                 if (response.ok) {
                     // window.location.href = "home.html";
+                    console.log(response);
                 } else {
                     response.json().then((data) => {
                         setErrorBox(data.msg);
