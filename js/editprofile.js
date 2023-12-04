@@ -26,17 +26,16 @@ let profileInfo;
 getProfileInfo()
     .then((info) => {
         profileInfo = info;
+        console.log(profileInfo);
+
+        photoPreview.src = `data:image/png;base64,${profileInfo.photo}`;
+        nameUser.value = profileInfo.name;
+        phone.value = profileInfo.phone;
+        email.value = profileInfo.email;
     })
     .catch((error) => {
         console.error("Error:", error);
     });
-
-console.log(profileInfo);
-
-photoPreview.src = `data:image/png;base64,${profileInfo.photo}`;
-nameUser.value = profileInfo.name;
-phone.value = profileInfo.phone;
-email.value = profileInfo.email;
 
 photoPreview.addEventListener("click", function () {
     photo.click();
