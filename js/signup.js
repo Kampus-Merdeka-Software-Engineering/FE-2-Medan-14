@@ -171,11 +171,11 @@ document.getElementById("submit").addEventListener("click", function (event) {
                 } else {
                     response.json().then((data) => {
                         setErrorBox(data.msg);
-                        setError(nameUser, data.msg);
-                        setError(phone, data.msg);
-                        setError(email, data.msg);
-                        setError(password, data.msg);
-                        setError(confPassword, data.msg);
+                        setError(nameUser, "");
+                        setError(phone, "");
+                        setError(email, "");
+                        setError(password, "");
+                        setError(confPassword, "");
                     });
                     checker_name = false;
                     checker_phone = false;
@@ -193,11 +193,11 @@ document.getElementById("submit").addEventListener("click", function (event) {
             .catch((error) => {
                 // If there's an error, display it
                 setErrorBox(error.message);
-                setError(nameUser, error.message);
-                setError(phone, error.message);
-                setError(email, error.message);
-                setError(password, error.message);
-                setError(confPassword, error.message);
+                setError(nameUser, "");
+                setError(phone, "");
+                setError(email, "");
+                setError(password, "");
+                setError(confPassword, "");
 
                 checker_name = false;
                 checker_phone = false;

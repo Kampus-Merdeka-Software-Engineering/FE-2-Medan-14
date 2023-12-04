@@ -261,19 +261,19 @@ document.getElementById("submit").addEventListener("click", function (event) {
                 } else {
                     response.json().then((data) => {
                         setErrorBox(data.msg);
-                        setError(nameUser, data.msg);
-                        setError(phone, data.msg);
-                        setError(email, data.msg);
-                        setError(password, data.msg);
-                        setError(confPassword, data.msg);
-                        setErrorPhoto(photo, data.msg);
+                        setSuccessPhoto(photo);
+                        setSuccess(nameUser);
+                        setSuccess(phone);
+                        setSuccess(email);
+                        setSuccess(password);
+                        setSuccess(confPassword);
                     });
-                    checker_name = false;
-                    checker_phone = false;
-                    checker_email = false;
-                    checker_password = false;
-                    checker_confPassword = false;
-                    checker_photo = false;
+                    checker_name = true;
+                    checker_phone = true;
+                    checker_email = true;
+                    checker_password = true;
+                    checker_confPassword = true;
+                    checker_photo = true;
 
                     nameUser.value = profileInfo.name;
                     phone.value = profileInfo.phone;
@@ -286,19 +286,19 @@ document.getElementById("submit").addEventListener("click", function (event) {
             .catch((error) => {
                 // If there's an error, display it
                 setErrorBox(error.message);
-                setError(nameUser, error.message);
-                setError(phone, error.message);
-                setError(email, error.message);
-                setError(password, error.message);
-                setError(confPassword, error.message);
-                setErrorPhoto(photo, error.message);
+                setSuccessPhoto(photo);
+                setSuccess(nameUser);
+                setSuccess(phone);
+                setSuccess(email);
+                setSuccess(password);
+                setSuccess(confPassword);
 
-                checker_name = false;
-                checker_phone = false;
-                checker_email = false;
-                checker_password = false;
-                checker_confPassword = false;
-                checker_photo = false;
+                checker_name = true;
+                checker_phone = true;
+                checker_email = true;
+                checker_password = true;
+                checker_confPassword = true;
+                checker_photo = true;
 
                 nameUser.value = profileInfo.name;
                 phone.value = profileInfo.phone;
