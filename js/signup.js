@@ -141,6 +141,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
                 phone: phone.value,
                 email: email.value,
                 password: password.value,
+                confPassword: confPassword.value,
             }),
             credentials: "include",
         })
@@ -156,11 +157,13 @@ document.getElementById("submit").addEventListener("click", function (event) {
                         setError(phone, data.msg);
                         setError(email, data.msg);
                         setError(password, data.msg);
+                        setError(confPassword, data.msg);
                     });
                     checker_name = false;
                     checker_phone = false;
                     checker_email = false;
                     checker_password = false;
+                    checker_confPassword = false;
                 }
             })
             .catch((error) => {
@@ -170,11 +173,13 @@ document.getElementById("submit").addEventListener("click", function (event) {
                 setError(phone, error.message);
                 setError(email, error.message);
                 setError(password, error.message);
+                setError(confPassword, error.message);
 
                 checker_name = false;
                 checker_phone = false;
                 checker_email = false;
                 checker_password = false;
+                checker_confPassword = false;
             });
     }
 });
