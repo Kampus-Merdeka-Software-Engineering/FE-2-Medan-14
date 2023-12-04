@@ -240,7 +240,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
             formData.append("photo", base64String);
         }
 
-        comsole.log(formData);
+        console.log(formData);
 
         // Use fetch to send the form data
         fetch(updateProfileUrl, {
