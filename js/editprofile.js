@@ -236,7 +236,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
             data.confPassword = confPassword.value;
         }
 
-        if (base64String !== profileInfo.photo) {
+        if (base64String !== profileInfo.photo || photoPreview !== profileInfo.photo) {
             data.photo = base64String;
         }
 
