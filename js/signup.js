@@ -127,8 +127,54 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
         setErrorBox("Please fill in the form correctly");
     } else {
-        console.log("Signup successful");
-        // database check
-        window.location.href = "home.html";
+        // for debugging
+        // window.location.href = "home.html";
+
+        // signup
+        fetch(signupUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                name: nameUser.value,
+                phone: phone.value,
+                email: email.value,
+                password: password.value,
+            }),
+            credentials: "include",
+        })
+            .then((response) => {
+                console.log(response.status); // Log the response status code
+                if (response.ok) {
+                    // If signup is successful, redirect to home page
+                    window.location.href = "login.html";
+                } else {
+                    response.json().then((data) => {
+                        setErrorBox(data.msg);
+                        setError(nameUser, data.msg);
+                        setError(phone, data.msg);
+                        setError(email, data.msg);
+                        setError(password, data.msg);
+                    });
+                    checker_name = false;
+                    checker_phone = false;
+                    checker_email = false;
+                    checker_password = false;
+                }
+            })
+            .catch((error) => {
+                // If there's an error, display it
+                setErrorBox(error.message);
+                setError(nameUser, error.message);
+                setError(phone, error.message);
+                setError(email, error.message);
+                setError(password, error.message);
+
+                checker_name = false;
+                checker_phone = false;
+                checker_email = false;
+                checker_password = false;
+            });
     }
 });
