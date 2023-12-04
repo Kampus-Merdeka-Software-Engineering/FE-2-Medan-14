@@ -48,14 +48,23 @@ phone.addEventListener("keyup", function (e) {
     } else if (!checkPhone(phone.value)) {
         setError(phone, "Invalid phone number");
         checker_phone = false;
-    } else if (!checkUniquePhone(phone.value)) {
-        setError(phone, "Phone already registered");
-        checker_phone = false;
     } else {
-        console.log(checkUniquePhone(phone.value));
-
-        setSuccess(phone);
-        checker_phone = true;
+        checkUniquePhone(phone.value)
+            .then((isUnique) => {
+                if (isUnique) {
+                    // If the phone number is unique, do something
+                    setSuccess(phone);
+                    checker_phone = true;
+                } else {
+                    setError(phone, "Phone already registered");
+                    checker_phone = false;
+                }
+            })
+            .catch((error) => {
+                // If there's an error, handle it
+                setError(phone, error);
+                checker_phone = false;
+            });
     }
 });
 
@@ -69,12 +78,23 @@ email.addEventListener("keyup", function (e) {
     } else if (!checkEmail(email.value)) {
         setError(email, "Invalid email");
         checker_email = false;
-    } else if (!checkUniqueEmail(email.value)) {
-        setError(email, "Email already registered");
-        checker_email = false;
     } else {
-        setSuccess(email);
-        checker_email = true;
+        checkUniqueEmail(email.value)
+            .then((isUnique) => {
+                if (isUnique) {
+                    // If the email is unique, do something
+                    setSuccess(email);
+                    checker_email = true;
+                } else {
+                    setError(email, "Email already registered");
+                    checker_email = false;
+                }
+            })
+            .catch((error) => {
+                // If there's an error, handle it
+                setError(email, error);
+                checker_email = false;
+            });
     }
 });
 
