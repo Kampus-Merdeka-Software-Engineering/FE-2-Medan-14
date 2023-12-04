@@ -171,6 +171,11 @@ password.addEventListener("keyup", function (e) {
     if (password.value === "") {
         setSuccess(password);
         checker_password = true;
+
+        if (confPassword.value === password.value) {
+            setSuccess(confPassword);
+            checker_confPassword = true;
+        }
     } else if (password.value.length < 5) {
         setError(password, "Passwords must be 5 to 28 characters long");
         checker_password = false;
@@ -187,9 +192,7 @@ password.addEventListener("keyup", function (e) {
 
             checker_confPassword = false;
             checker_password = false;
-        }
-
-        if (confPassword.value === password.value) {
+        } else if (confPassword.value === password.value) {
             setSuccess(confPassword);
             checker_confPassword = true;
         }
