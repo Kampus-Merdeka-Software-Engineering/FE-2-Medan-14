@@ -240,6 +240,8 @@ document.getElementById("submit").addEventListener("click", function (event) {
             formData.append("photo", base64String);
         }
 
+        comsole.log(formData);
+
         // Use fetch to send the form data
         fetch(updateProfileUrl, {
             method: "PATCH",
@@ -248,7 +250,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
         })
             .then((response) => {
                 if (response.ok) {
-                    window.location.href = "home.html";
+                    // window.location.href = "home.html";
                 } else {
                     response.json().then((data) => {
                         setErrorBox(data.msg);
