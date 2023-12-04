@@ -14,6 +14,7 @@ let checker_password = true;
 let checker_confPassword = true;
 
 let base64String;
+let profileInfo;
 
 setSuccessPhoto(photo);
 setSuccess(nameUser);
@@ -22,11 +23,9 @@ setSuccess(email);
 setSuccess(password);
 setSuccess(confPassword);
 
-let profileInfo;
 getProfileInfo()
     .then((info) => {
         profileInfo = info;
-        console.log(profileInfo);
 
         base64String = profileInfo.photo;
 
@@ -244,8 +243,6 @@ document.getElementById("submit").addEventListener("click", function (event) {
         if (base64String !== profileInfo.photo) {
             data.photo = base64String;
         }
-
-        console.log(data);
 
         // Use fetch to send the data as JSON
         fetch(updateProfileUrl, {
