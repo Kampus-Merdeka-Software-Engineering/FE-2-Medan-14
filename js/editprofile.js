@@ -52,7 +52,7 @@ photo.addEventListener("change", function (e) {
         let byteSize = (base64String.length * 3) / 4;
 
         if (byteSize > 2000000) {
-            photoPreview.src = "./img/user2.png";
+            photoPreview.src = `data:image/png;base64,${profileInfo.photo}`;
             setErrorPhoto(photo, "Photo must be less than 2MB");
             checker_photo = false;
         } else {
