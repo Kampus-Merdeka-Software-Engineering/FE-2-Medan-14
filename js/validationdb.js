@@ -10,8 +10,7 @@ async function checkUniqueEmail(email) {
         });
 
         if (!response.ok) {
-            const data = await response.json();
-            throw new Error(data.msg);
+            return false;
         }
 
         return true;
@@ -33,8 +32,7 @@ async function checkUniquePhone(phone) {
         });
 
         if (!response.ok) {
-            const data = await response.json();
-            throw new Error(data.msg);
+            return false;
         }
 
         return true;
