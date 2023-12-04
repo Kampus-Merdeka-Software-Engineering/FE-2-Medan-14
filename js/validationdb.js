@@ -15,7 +15,7 @@ async function checkUniqueEmail(email) {
 
         return true;
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         return false;
     }
 }
@@ -37,7 +37,7 @@ async function checkUniquePhone(phone) {
 
         return true;
     } catch (error) {
-        console.error(error);
+        // console.error(error);
         return false;
     }
 }
