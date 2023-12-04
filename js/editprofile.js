@@ -28,7 +28,9 @@ getProfileInfo()
         profileInfo = info;
         console.log(profileInfo);
 
-        photoPreview.src = `data:image/png;base64,${profileInfo.photo}`;
+        base64String = profileInfo.photo;
+
+        photoPreview.src = `data:image/png;base64,${base64String}`;
         nameUser.value = profileInfo.name;
         phone.value = profileInfo.phone;
         email.value = profileInfo.email;
@@ -164,6 +166,9 @@ email.addEventListener("keyup", function (e) {
 });
 
 password.addEventListener("keyup", function (e) {
+    setError(confPassword, "Password does not match");
+    checker_confPassword = false;
+
     if (password.value === "") {
         setSuccess(password);
         checker_password = true;
@@ -177,13 +182,13 @@ password.addEventListener("keyup", function (e) {
         setSuccess(password);
         checker_password = true;
 
-        if (confPassword.value !== password.value && confPassword.value === "") {
+        if (confPassword.value !== password.value && confPassword.value !== "") {
             setError(confPassword, "Password does not match");
             setError(password, "Password does not match");
 
             checker_confPassword = false;
             checker_password = false;
-        } else if (confPassword.value === password.value && confPassword.value === "") {
+        } else if (confPassword.value === password.value && confPassword.value !== "") {
             setSuccess(confPassword);
             checker_confPassword = true;
         }
@@ -236,7 +241,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
             data.confPassword = confPassword.value;
         }
 
-        if (base64String !== profileInfo.photo || photoPreview !== profileInfo.photo) {
+        if (base64String !== profileInfo.photo) {
             data.photo = base64String;
         }
 
