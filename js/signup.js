@@ -48,9 +48,9 @@ phone.addEventListener("keyup", function (e) {
     } else if (!checkPhone(phone.value)) {
         setError(phone, "Invalid phone number");
         checker_phone = false;
-        // } else if (!checkUniquePhone(phone.value)) {
-        //     setError(phone, "Phone already registered");
-        //     checker_phone = false;
+    } else if (!checkUniquePhone(phone.value)) {
+        setError(phone, "Phone already registered");
+        checker_phone = false;
     } else {
         setSuccess(phone);
         checker_phone = true;
@@ -67,9 +67,9 @@ email.addEventListener("keyup", function (e) {
     } else if (!checkEmail(email.value)) {
         setError(email, "Invalid email");
         checker_email = false;
-        // } else if (!checkUniqueEmail(email.value)) {
-        //     setError(email, "Email already registered");
-        //     checker_email = false;
+    } else if (!checkUniqueEmail(email.value)) {
+        setError(email, "Email already registered");
+        checker_email = false;
     } else {
         setSuccess(email);
         checker_email = true;
