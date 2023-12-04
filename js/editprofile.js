@@ -177,7 +177,7 @@ password.addEventListener("keyup", function (e) {
         setSuccess(password);
         checker_password = true;
 
-        if (confPassword.value !== password.value && confPassword.value !== "") {
+        if (confPassword.value !== password.value && confPassword.value === "") {
             setError(confPassword, "Password does not match");
             setError(password, "Password does not match");
 
