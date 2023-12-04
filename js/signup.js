@@ -49,6 +49,7 @@ phone.addEventListener("keyup", function (e) {
         setError(phone, "Invalid phone number");
         checker_phone = false;
     } else if (!checkUniquePhone(phone.value)) {
+        console.log(checkUniquePhone(phone.value));
         setError(phone, "Phone already registered");
         checker_phone = false;
     } else {
