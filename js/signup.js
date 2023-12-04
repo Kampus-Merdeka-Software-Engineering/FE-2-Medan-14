@@ -131,7 +131,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
         // window.location.href = "home.html";
 
         // signup
-        fetch(signupUrl, {
+        fetch(registerUrl, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
