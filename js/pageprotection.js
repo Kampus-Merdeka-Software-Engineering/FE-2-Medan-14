@@ -1,19 +1,23 @@
 checkLogin().then((isLoggedIn) => {
-    console.log("User is logged in: " + isLoggedIn);
-    console.log("index: " + (window.location.href === "https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14/"));
-    console.log("login: " + window.location.pathname.endsWith("login.html"));
-    console.log("signup: " + window.location.pathname.endsWith("signup.html"));
+    // console.log("User is logged in: " + isLoggedIn);
+    // console.log("index: " + (window.location.href === "https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14/"));
+    // console.log("login: " + window.location.pathname.endsWith("login.html"));
+    // console.log("signup: " + window.location.pathname.endsWith("signup.html"));
 
-    // if (!isLoggedIn) {
-    //     if (!window.location.pathname.endsWith("") && !window.location.pathname.endsWith("login.html") && !window.location.pathname.endsWith("signup.html")) {
-    //         alert("You are not logged in. You will be redirected to the login page.");
-    //         window.location.href = "login.html";
-    //     }
-    // } else {
-    //     if (window.location.pathname.endsWith("") || window.location.pathname.endsWith("login.html") || window.location.pathname.endsWith("signup.html")) {
-    //         window.location.href = "home.html";
-    //     }
-    // }
+    isIndexPage = window.location.href === "https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14/";
+    isLoginPage = window.location.pathname.endsWith("login.html");
+    isSignupPage = window.location.pathname.endsWith("signup.html");
+
+    if (!isLoggedIn) {
+        if (!isIndexPage || !isLoginPage || !isSignupPage) {
+            alert("You are not logged in. You will be redirected to the login page.");
+            window.location.href = "login.html";
+        }
+    } else {
+        if (isIndexPage || isLoginPage || isSignupPage) {
+            window.location.href = "home.html";
+        }
+    }
 });
 
 async function checkLogin() {
