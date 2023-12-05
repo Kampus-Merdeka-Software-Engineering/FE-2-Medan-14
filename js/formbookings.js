@@ -66,7 +66,7 @@ startDate.addEventListener("change", function (e) {
         setError(startDate, "Must not be in the past");
         checker_startDate = false;
     } else if (startDate.value >= endDate.value) {
-        setError(startDate, "Must not be after end date");
+        setError(startDate, "Can't be same/after end");
         checker_startDate = false;
     } else if (startDate.value < endDate.value && endDate.value != "") {
         setSuccess(startDate);
@@ -92,7 +92,7 @@ endDate.addEventListener("change", function (e) {
         setError(endDate, "Must not be blank");
         checker_endDate = false;
     } else if (endDate.value <= startDate.value) {
-        setError(endDate, "Must not be before start date");
+        setError(endDate, "Can't be same/before start");
         checker_endDate = false;
     } else if (endDate.value > startDate.value && startDate.value != "") {
         setSuccess(endDate);

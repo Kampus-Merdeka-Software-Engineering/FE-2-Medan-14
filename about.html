@@ -1,211 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BookID</title>
+        <meta name="title" content="BookID" />
 
-  <title>BookID</title>
-  <meta name="title" content="BookID">
+        <link rel="shortcut icon" href="img/logo.png" type="image/svg+xml" />
 
-  <link rel="shortcut icon" href="img/logo.png" type="image/svg+xml">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/styleabout.css" />
+    </head>
 
-  <link rel="stylesheet" href="css/styleabout.css">
+    <body>
+        <header class="header" data-header>
+            <div class="container">
+                <a href="#" class="logo">
+                    <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-light" />
 
-</head>
+                    <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-dark" />
+                </a>
 
-<body>
+                <nav class="navbar" data-navbar>
+                    <div class="navbar-top">
+                        <a href="#" class="logo">
+                            <img src="img/logo.png" width="74" height="24" alt="BookID home" />
+                        </a>
 
-  <header class="header" data-header>
-    <div class="container">
+                        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                        </button>
+                    </div>
 
-      <a href="#" class="logo">
-        <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-light">
-        
-        <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-dark">
-      </a>
+                    <ul class="navbar-list">
+                        <li>
+                            <a href="home.html" class="navbar-link">Home</a>
+                        </li>
 
-      <nav class="navbar" data-navbar>
+                        <li>
+                            <a href="explore.html" class="navbar-link">Explore</a>
+                        </li>
 
-        <div class="navbar-top">
-          <a href="#" class="logo">
-            <img src="img/logo.png" width="74" height="24" alt="BookID home">
-          </a>
+                        <li>
+                            <a href="rooms.html" class="navbar-link">Rooms</a>
+                        </li>
 
-          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
-            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
-          </button>
-        </div>
+                        <li>
+                            <a href="bookings.html" class="navbar-link">Bookings</a>
+                        </li>
 
-        <ul class="navbar-list">
+                        <li>
+                            <a href="about.html" class="navbar-link">About</a>
+                        </li>
+                    </ul>
+                </nav>
 
-          <li>
-            <a href="home.html" class="navbar-link">Home</a>
-          </li>
+                <img src="img/user.png" alt="" class="user-pic" onclick="toggleMenu()" />
 
-          <li>
-            <a href="explore.html" class="navbar-link">Explore</a>
-          </li>
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <div class="user-info">
+                            <img src="img/user.png" alt="" />
+                            <h3>Nama User</h3>
+                        </div>
+                        <hr />
 
-          <li>
-            <a href="rooms.html" class="navbar-link">Rooms</a>
-          </li>
+                        <a href="editprofile.html" class="sub-menu-link">
+                            <img src="img/profile.png" />
+                            <p>Edit Profile</p>
+                            <span>></span>
+                        </a>
 
-          <li>
-            <a href="bookings.html" class="navbar-link">Bookings</a>
-          </li>
+                        <a href="#" class="sub-menu-link">
+                            <img src="img/help.png" />
+                            <p>Help & Support</p>
+                            <span>></span>
+                        </a>
 
-          <li>
-            <a href="about.html" class="navbar-link">About</a>
-          </li>
+                        <a href="#" id="logout" class="sub-menu-link">
+                            <img src="img/logout.png" />
+                            <p>Logout</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
 
-        </ul>
+                <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                </button>
 
-      </nav>
+                <div class="overlay" data-nav-toggler data-overlay></div>
+            </div>
+        </header>
 
-      <img src="img/user.png" alt="" class="user-pic" onclick="toggleMenu()">
+        <main>
+            <article>
+                <section class="section hero" aria-label="home">
+                    <div class="container">
+                        <h1 class="h1 hero-title"><strong class="strong">Hey, we’re BookId.</strong> See our thoughts, stories and ideas.</h1>
 
-      <div class="sub-menu-wrap" id="subMenu">
-          <div class="sub-menu">
-              <div class="user-info">
-                  <img src="img/user.png" alt="">
-                  <h3>Nama User</h3>
-              </div>
-              <hr>
+                        <div class="wrapper">
+                            <form action="" class="newsletter-form">
+                                <input type="email" name="email_address" placeholder="Your email address" class="email-field" />
+                            </form>
 
-              <a href="editprofile.html" class="sub-menu-link">
-                  <img src="img/profile.png">
-                  <p>Edit Profile</p>
-                  <span>></span>
-              </a>
+                            <p class="newsletter-text">Get the email newsletter and unlock access to members-only content and updates</p>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
 
-              <a href="#" class="sub-menu-link">
-                  <img src="img/help.png">
-                  <p>Help & Support</p>
-                  <span>></span>
-              </a>
+        <footer class="footer">
+            <div class="container grid-list">
+                <ul class="footer-list">
+                    <li>
+                        <p class="h4 footer-list-title">More Info</p>
+                    </li>
 
-              <a href="index.html" class="sub-menu-link">
-                  <img src="img/logout.png">
-                  <p>Logout</p>
-                  <span>></span>
-              </a>
-          </div>
-      </div>
+                    <li>
+                        <address class="footer-text">Dimana-mana hatiku senang</address>
+                    </li>
 
-      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
-        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
-      </button>
+                    <li>
+                        <a href="mailto:info@email.com" class="footer-link">info@email.com</a>
+                    </li>
 
-      <div class="overlay" data-nav-toggler data-overlay></div>
+                    <li>
+                        <a href="tel:001234567890" class="footer-link">00 (123) 456 78 90</a>
+                    </li>
 
-    </div>
-  </header>
+                    <a href="#" class="logo">
+                        <img src="img/logo.png" width="74" height="24" style="padding-top: 20px" alt="Logo" />
+                    </a>
+                </ul>
 
-  <main>
-    <article>
-      <section class="section hero" aria-label="home">
-        <div class="container">
+                <ul class="footer-list">
+                    <li>
+                        <p class="h4 footer-list-title">See More</p>
+                    </li>
 
-          <h1 class="h1 hero-title">
-            <strong class="strong">Hey, we’re BookId.</strong> See our thoughts, stories and ideas.
-          </h1>
+                    <li>
+                        <a href="#" class="footer-link">Home</a>
+                    </li>
 
-          <div class="wrapper">
+                    <li>
+                        <a href="#" class="footer-link">Explore</a>
+                    </li>
 
-            <form action="" class="newsletter-form">
-              <input type="email" name="email_address" placeholder="Your email address" class="email-field">
-            </form>
+                    <li>
+                        <a href="#" class="footer-link">Rooms</a>
+                    </li>
 
-            <p class="newsletter-text">
-              Get the email newsletter and unlock access to members-only content and updates
-            </p>
+                    <li>
+                        <a href="#" class="footer-link">Rooms</a>
+                    </li>
 
-          </div>
+                    <li>
+                        <a href="#" class="footer-link">About</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
 
-        </div>
-      </section>
-    </article>
-  </main>
+        <script src="config/config.js"></script>
+        <script src="js/pageprotection.js"></script>
+        <script src="js/logout.js"></script>
+        <script src="js/index.js"></script>
 
-  <footer class="footer">
-    <div class="container grid-list">
-
-      <ul class="footer-list">
-
-        <li>
-          <p class="h4 footer-list-title">More Info</p>
-        </li>
-
-        <li>
-          <address class="footer-text">
-            Dimana-mana hatiku senang
-          </address>
-        </li>
-
-        <li>
-          <a href="mailto:info@email.com" class="footer-link">info@email.com</a>
-        </li>
-
-        <li>
-          <a href="tel:001234567890" class="footer-link">00 (123) 456 78 90</a>
-        </li>
-
-        <a href="#" class="logo">
-          <img src="img/logo.png" width="74" height="24" style="padding-top: 20px;" alt="Logo">
-        </a>
-
-      </ul>
-
-      <ul class="footer-list">
-
-        <li>
-          <p class="h4 footer-list-title">See More</p>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Home</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Explore</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Rooms</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">Rooms</a>
-        </li>
-
-        <li>
-          <a href="#" class="footer-link">About</a>
-        </li>
-
-      </ul>
-    </div>
-  </footer>
-
-
-  <script>
-    let subMenu = document.getElementById("subMenu");
-
-    function toggleMenu(){
-        subMenu.classList.toggle("open-menu");
-    }
-  </script> 
-
-  <script src="js/index.js"></script>
-
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
-</body>
-
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    </body>
 </html>
