@@ -9,7 +9,7 @@ checkLogin().then((isLoggedIn) => {
     isSignupPage = window.location.pathname.endsWith("signup.html");
 
     if (!isLoggedIn) {
-        if (!isIndexPage || !isLoginPage || !isSignupPage) {
+        if (!isIndexPage && !isLoginPage && !isSignupPage) {
             alert("You are not logged in. You will be redirected to the login page.");
             window.location.href = "login.html";
         }
