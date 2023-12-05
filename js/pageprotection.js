@@ -1,11 +1,11 @@
 checkLogin().then((isLoggedIn) => {
     if (!isLoggedIn) {
-        if (!window.location.pathname.endsWith("index.html") || !window.location.pathname.endsWith("login.html") || !window.location.pathname.endsWith("signup.html")) {
+        if (!window.location.pathname.endsWith("") || !window.location.pathname.endsWith("login.html") || !window.location.pathname.endsWith("signup.html")) {
             alert("You are not logged in. You will be redirected to the login page.");
             window.location.href = "login.html";
         }
     } else {
-        if (window.location.pathname.endsWith("index.html") || window.location.pathname.endsWith("login.html") || window.location.pathname.endsWith("signup.html")) {
+        if (window.location.pathname.endsWith("") || window.location.pathname.endsWith("login.html") || window.location.pathname.endsWith("signup.html")) {
             window.location.href = "home.html";
         }
     }
