@@ -1,6 +1,6 @@
 checkLogin().then((isLoggedIn) => {
     console.log("User is logged in: " + isLoggedIn);
-    console.log("index: " + window.location.pathname.endsWith(""));
+    console.log("index: " + window.location.pathname.endsWith("index.html"));
     console.log("login: " + window.location.pathname.endsWith("login.html"));
     console.log("signup: " + window.location.pathname.endsWith("signup.html"));
 
