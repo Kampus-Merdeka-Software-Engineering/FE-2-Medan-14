@@ -1,9 +1,4 @@
 checkLogin().then((isLoggedIn) => {
-    // console.log("User is logged in: " + isLoggedIn);
-    // console.log("index: " + (window.location.href === "https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14/"));
-    // console.log("login: " + window.location.pathname.endsWith("login.html"));
-    // console.log("signup: " + window.location.pathname.endsWith("signup.html"));
-
     isIndexPage = window.location.href === "https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14/" || window.location.pathname.endsWith("index.html");
     isLoginPage = window.location.pathname.endsWith("login.html");
     isSignupPage = window.location.pathname.endsWith("signup.html");
