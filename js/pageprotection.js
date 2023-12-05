@@ -5,11 +5,7 @@ checkLogin().then((isLoggedIn) => {
             window.location.href = "login.html";
         }
     } else {
-        if (window.location.pathname.endsWith("index.html")) {
-            window.location.href = "home.html";
-        } else if (window.location.pathname.endsWith("login.html")) {
-            window.location.href = "home.html";
-        } else if (window.location.pathname.endsWith("signup.html")) {
+        if (window.location.pathname.endsWith("index.html") || window.location.pathname.endsWith("login.html") || window.location.pathname.endsWith("signup.html")) {
             window.location.href = "home.html";
         }
     }
