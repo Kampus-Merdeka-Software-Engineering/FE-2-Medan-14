@@ -22,7 +22,7 @@
     <body>
         <header class="header" data-header>
             <div class="container">
-                <a href="#" class="logo">
+                <a href="home.html" class="logo">
                     <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-light" />
 
                     <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-dark" />
@@ -30,7 +30,7 @@
 
                 <nav class="navbar" data-navbar>
                     <div class="navbar-top">
-                        <a href="#" class="logo">
+                        <a href="home.html" class="logo">
                             <img src="img/logo.png" width="74" height="24" alt="BookID home" />
                         </a>
 
@@ -66,21 +66,17 @@
 
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <div class="user-info">
-                            <img src="img/user.png" alt="" />
-                            <h3>Nama User</h3>
-                        </div>
+                        <a href="profile.html">
+                            <div class="user-info">
+                                <img src="img/user.png" alt="" />
+                                <h3>Nama User</h3>
+                            </div>
+                        </a>
                         <hr />
 
                         <a href="editprofile.html" class="sub-menu-link">
                             <img src="img/profile.png" />
                             <p>Edit Profile</p>
-                            <span>></span>
-                        </a>
-
-                        <a href="#" class="sub-menu-link">
-                            <img src="img/help.png" />
-                            <p>Help & Support</p>
                             <span>></span>
                         </a>
 
@@ -102,13 +98,106 @@
 
         <main>
             <article>
+                <div class="navigation-header">
+                    <div class="navigation-container">
+                        <div class="navigation-select-btn">
+                            <span class="btn-text">Select Category</span>
+                            <span class="arrow-dwn">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </span>
+                        </div>
+                        <ul class="navigation-list-items">
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Standard Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Superior Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Deluxe Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Twin Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Single Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Double Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Family Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Junior Suite Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Suite Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Presidential Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Connecting Room</span>
+                            </li>
+                            <li class="navigation-item">
+                                <span class="navigation-checkbox">
+                                    <i class="fa-solid fa-check check-icon"></i>
+                                </span>
+                                <span class="navigation-item-text">Accessible Room</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="wrapper">
+                        <div class="icon"><i id="left" class="fa-solid fa-angle-left"></i></div>
+                        <ul class="tabs-box">
+                            <li class="tab active">Highest Rating</li>
+                            <li class="tab">Most Popular</li>
+                            <li class="tab">Cheapest</li>
+                        </ul>
+                        <div class="icon"><i id="right" class="fa-solid fa-angle-right"></i></div>
+                    </div>
+                </div>
                 <div class="container">
                     <div class="box-container">
-                        <div class="box">
+                        <div class="box" data-category="Presidential Room" data-avg-rating="5" data-total-booking="80" data-current-price="1500000">
                             <div class="property-card">
                                 <figure class="card-banner">
-                                    <a href="#">
-                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                    <a href="detailrooms.html">
+                                        <img src="img/shoe_1.jpg" alt="New Apartment Nice View" class="w-100" />
                                     </a>
 
                                     <div class="card-badge green">For Rent</div>
@@ -124,11 +213,11 @@
                                     </div>
 
                                     <h3 class="h3 card-title">
-                                        <a href="#">New Apartment Nice View</a>
+                                        <a href="detailrooms.html">1 - Presidential Room</a>
                                         <p class="card-rating">
                                             <i class="fa-solid fa-star"></i>
                                             <span class="rating-text">5</span>
-                                            <span class="total-booking">(1000)</span>
+                                            <span class="total-booking">(80)</span>
                                         </p>
                                     </h3>
 
@@ -136,27 +225,27 @@
 
                                     <ul class="card-list">
                                         <li class="card-item">
-                                            <strong>3</strong>
+                                            <strong>2</strong>
 
-                                            <ion-icon name="bed-outline"></ion-icon>
+                                            <i class="fa-solid fa-bed"></i>
 
                                             <span>Bedrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>2</strong>
+                                            <strong>1</strong>
 
-                                            <ion-icon name="man-outline"></ion-icon>
+                                            <i class="fa-solid fa-bath"></i>
 
                                             <span>Bathrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>3450</strong>
+                                            <strong>12</strong>
 
-                                            <ion-icon name="square-outline"></ion-icon>
+                                            <i class="fa-regular fa-square"></i>
 
-                                            <span>Square Ft</span>
+                                            <span>m²</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -169,11 +258,11 @@
                             </div>
                         </div>
 
-                        <div class="box">
+                        <div class="box" data-category="Presidential Room" data-avg-rating="4" data-total-booking="90" data-current-price="1400000">
                             <div class="property-card">
                                 <figure class="card-banner">
                                     <a href="#">
-                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
+                                        <img src="img/hero-bg.jpg" alt="New Apartment Nice View" class="w-100" />
                                     </a>
 
                                     <div class="card-badge green">For Rent</div>
@@ -185,15 +274,15 @@
                                             <span class="discount">10%</span>
                                             <span class="normal-price">Rp2.000.000</span>
                                         </p>
-                                        <h4>Rp1.500.000/Malam</h4>
+                                        <h4>Rp1.400.000/Malam</h4>
                                     </div>
 
                                     <h3 class="h3 card-title">
-                                        <a href="#">New Apartment Nice View</a>
+                                        <a href="#">2 - Presidential Room</a>
                                         <p class="card-rating">
                                             <i class="fa-solid fa-star"></i>
-                                            <span class="rating-text">5</span>
-                                            <span class="total-booking">(1000)</span>
+                                            <span class="rating-text">4</span>
+                                            <span class="total-booking">(90)</span>
                                         </p>
                                     </h3>
 
@@ -201,27 +290,27 @@
 
                                     <ul class="card-list">
                                         <li class="card-item">
-                                            <strong>3</strong>
+                                            <strong>2</strong>
 
-                                            <ion-icon name="bed-outline"></ion-icon>
+                                            <i class="fa-solid fa-bed"></i>
 
                                             <span>Bedrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>2</strong>
+                                            <strong>1</strong>
 
-                                            <ion-icon name="man-outline"></ion-icon>
+                                            <i class="fa-solid fa-bath"></i>
 
                                             <span>Bathrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>3450</strong>
+                                            <strong>12</strong>
 
-                                            <ion-icon name="square-outline"></ion-icon>
+                                            <i class="fa-regular fa-square"></i>
 
-                                            <span>Square Ft</span>
+                                            <span>m²</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -234,7 +323,7 @@
                             </div>
                         </div>
 
-                        <div class="box">
+                        <div class="box" data-category="Standard Room" data-avg-rating="3" data-total-booking="100" data-current-price="1800000">
                             <div class="property-card">
                                 <figure class="card-banner">
                                     <a href="#">
@@ -250,15 +339,15 @@
                                             <span class="discount">10%</span>
                                             <span class="normal-price">Rp2.000.000</span>
                                         </p>
-                                        <h4>Rp1.500.000/Malam</h4>
+                                        <h4>Rp1.800.000/Malam</h4>
                                     </div>
 
                                     <h3 class="h3 card-title">
-                                        <a href="#">New Apartment Nice View</a>
+                                        <a href="#">3 - Standard Room</a>
                                         <p class="card-rating">
                                             <i class="fa-solid fa-star"></i>
-                                            <span class="rating-text">5</span>
-                                            <span class="total-booking">(1000)</span>
+                                            <span class="rating-text">3</span>
+                                            <span class="total-booking">(100)</span>
                                         </p>
                                     </h3>
 
@@ -266,27 +355,27 @@
 
                                     <ul class="card-list">
                                         <li class="card-item">
-                                            <strong>3</strong>
+                                            <strong>2</strong>
 
-                                            <ion-icon name="bed-outline"></ion-icon>
+                                            <i class="fa-solid fa-bed"></i>
 
                                             <span>Bedrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>2</strong>
+                                            <strong>1</strong>
 
-                                            <ion-icon name="man-outline"></ion-icon>
+                                            <i class="fa-solid fa-bath"></i>
 
                                             <span>Bathrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>3450</strong>
+                                            <strong>12</strong>
 
-                                            <ion-icon name="square-outline"></ion-icon>
+                                            <i class="fa-regular fa-square"></i>
 
-                                            <span>Square Ft</span>
+                                            <span>m²</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -299,7 +388,7 @@
                             </div>
                         </div>
 
-                        <div class="box">
+                        <div class="box" data-category="Presidential Room" data-avg-rating="4.8" data-total-booking="30" data-current-price="1100000">
                             <div class="property-card">
                                 <figure class="card-banner">
                                     <a href="#">
@@ -315,15 +404,15 @@
                                             <span class="discount">10%</span>
                                             <span class="normal-price">Rp2.000.000</span>
                                         </p>
-                                        <h4>Rp1.500.000/Malam</h4>
+                                        <h4>Rp1.100.000/Malam</h4>
                                     </div>
 
                                     <h3 class="h3 card-title">
-                                        <a href="#">New Apartment Nice View</a>
+                                        <a href="#">4 - Presidential Room</a>
                                         <p class="card-rating">
                                             <i class="fa-solid fa-star"></i>
-                                            <span class="rating-text">5</span>
-                                            <span class="total-booking">(1000)</span>
+                                            <span class="rating-text">4.8</span>
+                                            <span class="total-booking">(30)</span>
                                         </p>
                                     </h3>
 
@@ -331,27 +420,27 @@
 
                                     <ul class="card-list">
                                         <li class="card-item">
-                                            <strong>3</strong>
+                                            <strong>2</strong>
 
-                                            <ion-icon name="bed-outline"></ion-icon>
+                                            <i class="fa-solid fa-bed"></i>
 
                                             <span>Bedrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>2</strong>
+                                            <strong>1</strong>
 
-                                            <ion-icon name="man-outline"></ion-icon>
+                                            <i class="fa-solid fa-bath"></i>
 
                                             <span>Bathrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>3450</strong>
+                                            <strong>12</strong>
 
-                                            <ion-icon name="square-outline"></ion-icon>
+                                            <i class="fa-regular fa-square"></i>
 
-                                            <span>Square Ft</span>
+                                            <span>m²</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -364,7 +453,7 @@
                             </div>
                         </div>
 
-                        <div class="box">
+                        <div class="box" data-category="Presidential Room" data-avg-rating="4.7" data-total-booking="28" data-current-price="900000">
                             <div class="property-card">
                                 <figure class="card-banner">
                                     <a href="#">
@@ -380,15 +469,15 @@
                                             <span class="discount">10%</span>
                                             <span class="normal-price">Rp2.000.000</span>
                                         </p>
-                                        <h4>Rp1.500.000/Malam</h4>
+                                        <h4>Rp900.000/Malam</h4>
                                     </div>
 
                                     <h3 class="h3 card-title">
-                                        <a href="#">New Apartment Nice View</a>
+                                        <a href="#">5 - Presidential Room</a>
                                         <p class="card-rating">
                                             <i class="fa-solid fa-star"></i>
-                                            <span class="rating-text">5</span>
-                                            <span class="total-booking">(1000)</span>
+                                            <span class="rating-text">4.7</span>
+                                            <span class="total-booking">(28)</span>
                                         </p>
                                     </h3>
 
@@ -396,27 +485,27 @@
 
                                     <ul class="card-list">
                                         <li class="card-item">
-                                            <strong>3</strong>
+                                            <strong>2</strong>
 
-                                            <ion-icon name="bed-outline"></ion-icon>
+                                            <i class="fa-solid fa-bed"></i>
 
                                             <span>Bedrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>2</strong>
+                                            <strong>1</strong>
 
-                                            <ion-icon name="man-outline"></ion-icon>
+                                            <i class="fa-solid fa-bath"></i>
 
                                             <span>Bathrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>3450</strong>
+                                            <strong>12</strong>
 
-                                            <ion-icon name="square-outline"></ion-icon>
+                                            <i class="fa-regular fa-square"></i>
 
-                                            <span>Square Ft</span>
+                                            <span>m²</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -429,7 +518,7 @@
                             </div>
                         </div>
 
-                        <div class="box">
+                        <div class="box" data-category="Standard Room" data-avg-rating="4.7" data-total-booking="28" data-current-price="900000">
                             <div class="property-card">
                                 <figure class="card-banner">
                                     <a href="#">
@@ -445,15 +534,15 @@
                                             <span class="discount">10%</span>
                                             <span class="normal-price">Rp2.000.000</span>
                                         </p>
-                                        <h4>Rp1.500.000/Malam</h4>
+                                        <h4>Rp900.000/Malam</h4>
                                     </div>
 
                                     <h3 class="h3 card-title">
-                                        <a href="#">New Apartment Nice View</a>
+                                        <a href="#">6 - Standard Room</a>
                                         <p class="card-rating">
                                             <i class="fa-solid fa-star"></i>
-                                            <span class="rating-text">5</span>
-                                            <span class="total-booking">(1000)</span>
+                                            <span class="rating-text">4.7</span>
+                                            <span class="total-booking">(28)</span>
                                         </p>
                                     </h3>
 
@@ -461,27 +550,27 @@
 
                                     <ul class="card-list">
                                         <li class="card-item">
-                                            <strong>3</strong>
+                                            <strong>2</strong>
 
-                                            <ion-icon name="bed-outline"></ion-icon>
+                                            <i class="fa-solid fa-bed"></i>
 
                                             <span>Bedrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>2</strong>
+                                            <strong>1</strong>
 
-                                            <ion-icon name="man-outline"></ion-icon>
+                                            <i class="fa-solid fa-bath"></i>
 
                                             <span>Bathrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>3450</strong>
+                                            <strong>12</strong>
 
-                                            <ion-icon name="square-outline"></ion-icon>
+                                            <i class="fa-regular fa-square"></i>
 
-                                            <span>Square Ft</span>
+                                            <span>m²</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -494,7 +583,7 @@
                             </div>
                         </div>
 
-                        <div class="box">
+                        <div class="box" data-category="Suite Room" data-avg-rating="4.7" data-total-booking="28" data-current-price="900000">
                             <div class="property-card">
                                 <figure class="card-banner">
                                     <a href="#">
@@ -510,15 +599,15 @@
                                             <span class="discount">10%</span>
                                             <span class="normal-price">Rp2.000.000</span>
                                         </p>
-                                        <h4>Rp1.500.000/Malam</h4>
+                                        <h4>Rp900.000/Malam</h4>
                                     </div>
 
                                     <h3 class="h3 card-title">
-                                        <a href="#">New Apartment Nice View</a>
+                                        <a href="#">7 - Suite Room</a>
                                         <p class="card-rating">
                                             <i class="fa-solid fa-star"></i>
-                                            <span class="rating-text">5</span>
-                                            <span class="total-booking">(1000)</span>
+                                            <span class="rating-text">4.7</span>
+                                            <span class="total-booking">(28)</span>
                                         </p>
                                     </h3>
 
@@ -526,157 +615,27 @@
 
                                     <ul class="card-list">
                                         <li class="card-item">
-                                            <strong>3</strong>
+                                            <strong>2</strong>
 
-                                            <ion-icon name="bed-outline"></ion-icon>
+                                            <i class="fa-solid fa-bed"></i>
 
                                             <span>Bedrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>2</strong>
+                                            <strong>1</strong>
 
-                                            <ion-icon name="man-outline"></ion-icon>
-
-                                            <span>Bathrooms</span>
-                                        </li>
-
-                                        <li class="card-item">
-                                            <strong>3450</strong>
-
-                                            <ion-icon name="square-outline"></ion-icon>
-
-                                            <span>Square Ft</span>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="card-footer">
-                                    <a href="detailrooms.html">
-                                        <button class="card-button">Detail</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="box">
-                            <div class="property-card">
-                                <figure class="card-banner">
-                                    <a href="#">
-                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
-                                    </a>
-
-                                    <div class="card-badge green">For Rent</div>
-                                </figure>
-
-                                <div class="card-content">
-                                    <div class="card-price">
-                                        <p class="card-discount-price">
-                                            <span class="discount">10%</span>
-                                            <span class="normal-price">Rp2.000.000</span>
-                                        </p>
-                                        <h4>Rp1.500.000/Malam</h4>
-                                    </div>
-
-                                    <h3 class="h3 card-title">
-                                        <a href="#">New Apartment Nice View</a>
-                                        <p class="card-rating">
-                                            <i class="fa-solid fa-star"></i>
-                                            <span class="rating-text">5</span>
-                                            <span class="total-booking">(1000)</span>
-                                        </p>
-                                    </h3>
-
-                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
-
-                                    <ul class="card-list">
-                                        <li class="card-item">
-                                            <strong>3</strong>
-
-                                            <ion-icon name="bed-outline"></ion-icon>
-
-                                            <span>Bedrooms</span>
-                                        </li>
-
-                                        <li class="card-item">
-                                            <strong>2</strong>
-
-                                            <ion-icon name="man-outline"></ion-icon>
+                                            <i class="fa-solid fa-bath"></i>
 
                                             <span>Bathrooms</span>
                                         </li>
 
                                         <li class="card-item">
-                                            <strong>3450</strong>
+                                            <strong>12</strong>
 
-                                            <ion-icon name="square-outline"></ion-icon>
+                                            <i class="fa-regular fa-square"></i>
 
-                                            <span>Square Ft</span>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="card-footer">
-                                    <a href="detailrooms.html">
-                                        <button class="card-button">Detail</button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="box">
-                            <div class="property-card">
-                                <figure class="card-banner">
-                                    <a href="#">
-                                        <img src="img/blog-2.jpg" alt="New Apartment Nice View" class="w-100" />
-                                    </a>
-
-                                    <div class="card-badge green">For Rent</div>
-                                </figure>
-
-                                <div class="card-content">
-                                    <div class="card-price">
-                                        <p class="card-discount-price">
-                                            <span class="discount">10%</span>
-                                            <span class="normal-price">Rp2.000.000</span>
-                                        </p>
-                                        <h4>Rp1.500.000/Malam</h4>
-                                    </div>
-
-                                    <h3 class="h3 card-title">
-                                        <a href="#">New Apartment Nice View</a>
-                                        <p class="card-rating">
-                                            <i class="fa-solid fa-star"></i>
-                                            <span class="rating-text">5</span>
-                                            <span class="total-booking">(1000)</span>
-                                        </p>
-                                    </h3>
-
-                                    <p class="card-text">Beautiful Huge 1 Family House In Heart Of Westbury. Newly Renovated With New Wood</p>
-
-                                    <ul class="card-list">
-                                        <li class="card-item">
-                                            <strong>3</strong>
-
-                                            <ion-icon name="bed-outline"></ion-icon>
-
-                                            <span>Bedrooms</span>
-                                        </li>
-
-                                        <li class="card-item">
-                                            <strong>2</strong>
-
-                                            <ion-icon name="man-outline"></ion-icon>
-
-                                            <span>Bathrooms</span>
-                                        </li>
-
-                                        <li class="card-item">
-                                            <strong>3450</strong>
-
-                                            <ion-icon name="square-outline"></ion-icon>
-
-                                            <span>Square Ft</span>
+                                            <span>m²</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -690,10 +649,8 @@
                         </div>
                         <!-- end div box -->
                     </div>
-
-                    <div class="button-more">
-                        <div id="load-more">Load More</div>
-                    </div>
+                    <!-- end div box-container -->
+                    <br /><br />
                 </div>
             </article>
         </main>
@@ -706,18 +663,18 @@
                     </li>
 
                     <li>
-                        <address class="footer-text">Dimana-mana hatiku senang</address>
+                        <address class="footer-text">BookID | Indonesia</address>
                     </li>
 
                     <li>
-                        <a href="mailto:info@email.com" class="footer-link">info@email.com</a>
+                        <a href="mailto:bookid@email.com" class="footer-link">bookid@email.com</a>
                     </li>
 
                     <li>
-                        <a href="tel:001234567890" class="footer-link">00 (123) 456 78 90</a>
+                        <a href="tel:088888888888" class="footer-link">+62 888 8888 8888</a>
                     </li>
 
-                    <a href="#" class="logo">
+                    <a href="home.html" class="logo">
                         <img src="img/logo.png" width="74" height="24" style="padding-top: 20px" alt="Logo" />
                     </a>
                 </ul>
@@ -728,33 +685,33 @@
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Home</a>
+                        <a href="home.html" class="footer-link">Home</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Explore</a>
+                        <a href="explore.html" class="footer-link">Explore</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Rooms</a>
+                        <a href="rooms.html" class="footer-link">Rooms</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Rooms</a>
+                        <a href="bookings.html" class="footer-link">Bookings</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">About</a>
+                        <a href="about.html" class="footer-link">About</a>
                     </li>
                 </ul>
             </div>
         </footer>
 
-        <script src="config/config.js"></script>
-        <script src="js/pageprotection.js"></script>
-        <script src="js/logout.js"></script>
-        <script src="js/rooms.js"></script>
-        <script src="js/index.js"></script>
+        <script src="./config/config.js"></script>
+        <!-- <script src="./js/pageprotection.js"></script> -->
+        <script src="./js/logout.js"></script>
+        <script src="./js/rooms.js"></script>
+        <script src="./js/index.js"></script>
 
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

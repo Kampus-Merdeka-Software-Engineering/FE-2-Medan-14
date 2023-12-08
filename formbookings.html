@@ -22,7 +22,7 @@
     <body>
         <header class="header" data-header>
             <div class="container">
-                <a href="#" class="logo">
+                <a href="home.html" class="logo">
                     <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-light" />
 
                     <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-dark" />
@@ -30,7 +30,7 @@
 
                 <nav class="navbar" data-navbar>
                     <div class="navbar-top">
-                        <a href="#" class="logo">
+                        <a href="home.html" class="logo">
                             <img src="img/logo.png" width="74" height="24" alt="BookID home" />
                         </a>
 
@@ -66,21 +66,17 @@
 
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <div class="user-info">
-                            <img src="img/user.png" alt="" />
-                            <h3>Nama User</h3>
-                        </div>
+                        <a href="profile.html">
+                            <div class="user-info">
+                                <img src="img/user.png" alt="" />
+                                <h3>Nama User</h3>
+                            </div>
+                        </a>
                         <hr />
 
                         <a href="editprofile.html" class="sub-menu-link">
                             <img src="img/profile.png" />
                             <p>Edit Profile</p>
-                            <span>></span>
-                        </a>
-
-                        <a href="#" class="sub-menu-link">
-                            <img src="img/help.png" />
-                            <p>Help & Support</p>
                             <span>></span>
                         </a>
 
@@ -135,21 +131,73 @@
                             <span id="totalRoomDisplay">Total Rooms: </span>
                             <h4 id="totalPriceDisplay">Total: Rp</h4>
                         </div>
-                        <button id="submit" style="display: none">Book</button>
-                        <button id="edit" style="display: none">Edit</button>
+                        <button id="submit" style="display: none"><i class="fa-solid fa-check"></i> Book Now</button>
+                        <button id="edit" style="display: none"><i class="fa-solid fa-pen-to-square"></i> Edit</button>
                     </form>
                 </section>
             </article>
         </main>
 
+        <footer class="footer">
+            <div class="container grid-list">
+                <ul class="footer-list">
+                    <li>
+                        <p class="h4 footer-list-title">More Info</p>
+                    </li>
+
+                    <li>
+                        <address class="footer-text">BookID | Indonesia</address>
+                    </li>
+
+                    <li>
+                        <a href="mailto:bookid@email.com" class="footer-link">bookid@email.com</a>
+                    </li>
+
+                    <li>
+                        <a href="tel:088888888888" class="footer-link">+62 888 8888 8888</a>
+                    </li>
+
+                    <a href="home.html" class="logo">
+                        <img src="img/logo.png" width="74" height="24" style="padding-top: 20px" alt="Logo" />
+                    </a>
+                </ul>
+
+                <ul class="footer-list">
+                    <li>
+                        <p class="h4 footer-list-title">See More</p>
+                    </li>
+
+                    <li>
+                        <a href="home.html" class="footer-link">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="explore.html" class="footer-link">Explore</a>
+                    </li>
+
+                    <li>
+                        <a href="rooms.html" class="footer-link">Rooms</a>
+                    </li>
+
+                    <li>
+                        <a href="bookings.html" class="footer-link">Bookings</a>
+                    </li>
+
+                    <li>
+                        <a href="about.html" class="footer-link">About</a>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+
         <script src="./config/config.js"></script>
-        <script src="js/pageprotection.js"></script>
+        <!-- <script src="./js/pageprotection.js"></script> -->
         <script src="./js/validationtool.js"></script>
         <script src="./js/regex.js"></script>
         <script src="./js/bookingstool.js"></script>
-        <script src="js/index.js"></script>
+        <script src="./js/index.js"></script>
         <script src="./js/formbookings.js"></script>
-        <script src="js/logout.js"></script>
+        <script src="./js/logout.js"></script>
 
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

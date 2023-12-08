@@ -20,7 +20,7 @@
     <body>
         <header class="header" data-header>
             <div class="container">
-                <a href="#" class="logo">
+                <a href="home.html" class="logo">
                     <img src="img/logo.png" width="74" height="24" alt="BookID home" class="logo-light" />
 
                     <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-dark" />
@@ -28,7 +28,7 @@
 
                 <nav class="navbar" data-navbar>
                     <div class="navbar-top">
-                        <a href="#" class="logo">
+                        <a href="home.html" class="logo">
                             <img src="img/logo.png" width="74" height="24" alt="BookID home" />
                         </a>
 
@@ -60,25 +60,21 @@
                     </ul>
                 </nav>
 
-                <img src="img/user.png" alt="" class="user-pic" onclick="toggleMenu()" />
+                <img src="img/user.png" alt="" id="userPhotoNav" class="user-pic" onclick="toggleMenu()" />
 
                 <div class="sub-menu-wrap" id="subMenu">
                     <div class="sub-menu">
-                        <div class="user-info">
-                            <img src="img/user.png" alt="" />
-                            <h3>Nama User</h3>
-                        </div>
+                        <a href="profile.html">
+                            <div class="user-info">
+                                <img src="img/user.png" alt="" />
+                                <h3 id="userNameNav">Nama User</h3>
+                            </div>
+                        </a>
                         <hr />
 
                         <a href="editprofile.html" class="sub-menu-link">
                             <img src="img/profile.png" />
                             <p>Edit Profile</p>
-                            <span>></span>
-                        </a>
-
-                        <a href="#" class="sub-menu-link">
-                            <img src="img/help.png" />
-                            <p>Help & Support</p>
                             <span>></span>
                         </a>
 
@@ -103,14 +99,17 @@
                 <section class="section hero has-bg-image" aria-label="home" style="background-image: url('img/hero-bg.jpg')">
                     <div class="container">
                         <div class="hero-content">
-                            <h1 class="h1 hero-title">Crafting project specific solutions with expertise.</h1>
+                            <h1 class="h1 hero-title">Elevate Your Stay, Effortlessly Booked</h1>
 
-                            <p class="hero-text">We’re a creative company that focuses on establishing long-term relationships with customers.</p>
+                            <p class="hero-text">
+                                Immerse yourself in the epitome of convenience as you experience exceptional service that transcends boundaries – anytime, anywhere, ensuring your journey is not just a trip but a seamless exploration
+                                tailored to your preferences
+                            </p>
 
                             <div class="btn-wrapper">
-                                <a href="#" class="btn btn-primary">Explore Now</a>
+                                <a href="explore.html" class="btn btn-primary">Explore Now</a>
 
-                                <a href="#" class="btn btn-outline">Contact Us</a>
+                                <a href="about.html" class="btn btn-outline">Contact Us</a>
                             </div>
                         </div>
                     </div>
@@ -120,54 +119,54 @@
                     <div class="container">
                         <p class="section-subtitle" id="service-label">What We Do?</p>
 
-                        <h2 class="h2 section-title">The service we offer is specifically designed to meet your needs.</h2>
+                        <h2 class="h2 section-title">The service we offer is specifically designed to meet your needs</h2>
 
                         <ul class="grid-list">
                             <li>
                                 <div class="service-card">
                                     <div class="card-icon">
-                                        <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
                                     </div>
 
-                                    <h3 class="h4 card-title">24/7 Support</h3>
+                                    <h3 class="h4 card-title">Effortless <br />Booking</h3>
 
-                                    <p class="card-text">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+                                    <p class="card-text">Streamlined hotel reservations with personalized options and real-time updates for a stress-free experience</p>
                                 </div>
                             </li>
 
                             <li>
                                 <div class="service-card">
                                     <div class="card-icon">
-                                        <ion-icon name="shield-checkmark-outline" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="star-outline" aria-hidden="true"></ion-icon>
                                     </div>
 
-                                    <h3 class="h4 card-title">Secure Payments</h3>
+                                    <h3 class="h4 card-title">Personalized Recommendations</h3>
 
-                                    <p class="card-text">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+                                    <p class="card-text">Tailored suggestions, adaptive algorithms, and exclusive deals curated to match your unique preferences</p>
                                 </div>
                             </li>
 
                             <li>
                                 <div class="service-card">
                                     <div class="card-icon">
-                                        <ion-icon name="cloud-download-outline" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="refresh-outline" aria-hidden="true"></ion-icon>
                                     </div>
 
-                                    <h3 class="h4 card-title">Daily Updates</h3>
+                                    <h3 class="h4 card-title">Real-Time <br />Updates</h3>
 
-                                    <p class="card-text">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+                                    <p class="card-text">Instant confirmation, live notifications, and 24/7 customer support for constant peace of mind during your booking journey</p>
                                 </div>
                             </li>
 
                             <li>
                                 <div class="service-card">
                                     <div class="card-icon">
-                                        <ion-icon name="pie-chart-outline" aria-hidden="true"></ion-icon>
+                                        <ion-icon name="wallet-outline" aria-hidden="true"></ion-icon>
                                     </div>
 
-                                    <h3 class="h4 card-title">Market Research</h3>
+                                    <h3 class="h4 card-title">Secure and Flexible Payments</h3>
 
-                                    <p class="card-text">Nulla vitae elit libero, a pharetra augue. Donec id elit non mi porta gravida at eget metus cras justo.</p>
+                                    <p class="card-text">Multiple secure options, transparent pricing, and flexible cancellation policies ensure a secure and convenient payment</p>
                                 </div>
                             </li>
                         </ul>
@@ -183,7 +182,7 @@
                         <div class="about-content">
                             <p class="section-subtitle" id="about-label">Why Choose Us?</p>
 
-                            <h2 class="h2 section-title">We bring solutions to make life easier for our clients.</h2>
+                            <h2 class="h2 section-title">Seamless bookings, personalized experiences, and unparalleled convenience with BookID</h2>
 
                             <ul>
                                 <li class="about-item">
@@ -192,14 +191,11 @@
                                             <button class="accordion-btn" data-accordion-btn>
                                                 <ion-icon name="chevron-down-outline" aria-hidden="true" class="down"></ion-icon>
 
-                                                <spna class="span h5">Professional Design</spna>
+                                                <span class="span h5">Efficiency and Simplicity</span>
                                             </button>
                                         </h3>
 
-                                        <p class="accordion-content">
-                                            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna,
-                                            vel.
-                                        </p>
+                                        <p class="accordion-content">Streamlined booking, user-friendly interface, and time-saving solutions for seamless travel planning</p>
                                     </div>
                                 </li>
 
@@ -209,14 +205,11 @@
                                             <button class="accordion-btn" data-accordion-btn>
                                                 <ion-icon name="chevron-down-outline" aria-hidden="true" class="down"></ion-icon>
 
-                                                <spna class="span h5">Top-Notch Support</spna>
+                                                <span class="span h5">Personalized Experiences</span>
                                             </button>
                                         </h3>
 
-                                        <p class="accordion-content">
-                                            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna,
-                                            vel.
-                                        </p>
+                                        <p class="accordion-content">Tailored recommendations, exclusive deals, and smart algorithms adapting to your preferences redefine your journey</p>
                                     </div>
                                 </li>
 
@@ -226,14 +219,11 @@
                                             <button class="accordion-btn" data-accordion-btn>
                                                 <ion-icon name="chevron-down-outline" aria-hidden="true" class="down"></ion-icon>
 
-                                                <spna class="span h5">Exclusive Assets</spna>
+                                                <span class="span h5">Customer-Centric Approach</span>
                                             </button>
                                         </h3>
 
-                                        <p class="accordion-content">
-                                            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna,
-                                            vel.
-                                        </p>
+                                        <p class="accordion-content">24/7 support, transparent communication, and secure, flexible payments ensure a worry-free experience with BookID</p>
                                     </div>
                                 </li>
                             </ul>
@@ -250,9 +240,12 @@
                         <div class="feature-content">
                             <p class="section-subtitle" id="feautre-label">Our Solutions</p>
 
-                            <h2 class="h2 section-title">We make your spending stress-free for you to have the perfect control.</h2>
+                            <h2 class="h2 section-title">Revolutionizing travel with seamless bookings, personalized experiences, and customer-centric services</h2>
 
-                            <p class="section-text">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Praesent commodo cursus.</p>
+                            <p class="section-text">
+                                Elevate your travel experience through a seamlessly streamlined reservation process, an intuitively designed user interface, and innovative time-saving solutions, ensuring your hotel bookings are not just
+                                efficient but a pleasure to undertake
+                            </p>
 
                             <ul class="feature-list">
                                 <li>
@@ -261,7 +254,7 @@
                                             <ion-icon name="checkmark" aria-hidden="true"></ion-icon>
                                         </div>
 
-                                        <span class="span"> Aenean quam ornare. Curabitur blandit. </span>
+                                        <span class="span"> Effortless, swift reservations for seamless travel </span>
                                     </div>
                                 </li>
 
@@ -271,7 +264,7 @@
                                             <ion-icon name="checkmark" aria-hidden="true"></ion-icon>
                                         </div>
 
-                                        <span class="span"> Nullam quis risus eget urna mollis ornare. </span>
+                                        <span class="span"> Personalized offers matching your preferences </span>
                                     </div>
                                 </li>
 
@@ -281,7 +274,7 @@
                                             <ion-icon name="checkmark" aria-hidden="true"></ion-icon>
                                         </div>
 
-                                        <span class="span"> Etiam porta euismod malesuada mollis. </span>
+                                        <span class="span"> Round-the-clock assistance for peace of mind </span>
                                     </div>
                                 </li>
 
@@ -291,7 +284,7 @@
                                             <ion-icon name="checkmark" aria-hidden="true"></ion-icon>
                                         </div>
 
-                                        <span class="span"> Vivamus sagittis lacus vel augue rutrum. </span>
+                                        <span class="span"> Safe, transparent payments for worry-free bookings </span>
                                     </div>
                                 </li>
                             </ul>
@@ -302,106 +295,6 @@
                 <section class="cta">
                     <div class="container-joy">
                         <img src="img/joy-banner.png" alt="joy" style="width: 100%" />
-                    </div>
-                </section>
-
-                <section class="section project" aria-labelledby="project-label">
-                    <div class="container">
-                        <p class="section-subtitle" id="project-label">Case Studies</p>
-
-                        <h2 class="h2 section-title">Check out some of our awesome projects with creative ideas and great design.</h2>
-
-                        <ul class="grid-list">
-                            <li>
-                                <div class="project-card">
-                                    <figure class="card-banner img-holder" style="--width: 560; --height: 350">
-                                        <img src="img/blog-1.jpg" width="560" height="350" loading="lazy" alt="Ligula tristique quis risus" class="img-cover" />
-                                    </figure>
-
-                                    <div class="card-content">
-                                        <h3 class="h3">
-                                            <a href="#" class="card-title">Ligula tristique quis risus</a>
-                                        </h3>
-
-                                        <p class="card-text">Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor.</p>
-
-                                        <ul class="card-meta-list">
-                                            <li class="card-meta-item">
-                                                <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
-
-                                                <time class="meta-text" datetime="2022-04-14">14 Apr 2022</time>
-                                            </li>
-
-                                            <li class="card-meta-item">
-                                                <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon>
-
-                                                <span class="meta-text">Coding</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="project-card">
-                                    <figure class="card-banner img-holder" style="--width: 560; --height: 350">
-                                        <img src="img/blog-2.jpg" width="560" height="350" loading="lazy" alt="Nullam id dolor elit id nibh" class="img-cover" />
-                                    </figure>
-
-                                    <div class="card-content">
-                                        <h3 class="h3">
-                                            <a href="#" class="card-title">Nullam id dolor elit id nibh</a>
-                                        </h3>
-
-                                        <p class="card-text">Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor.</p>
-
-                                        <ul class="card-meta-list">
-                                            <li class="card-meta-item">
-                                                <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
-
-                                                <time class="meta-text" datetime="2022-03-29">29 Mar 2022</time>
-                                            </li>
-
-                                            <li class="card-meta-item">
-                                                <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon>
-
-                                                <span class="meta-text">Workspace</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-
-                            <li>
-                                <div class="project-card">
-                                    <figure class="card-banner img-holder" style="--width: 560; --height: 350">
-                                        <img src="img/blog-3.jpg" width="560" height="350" loading="lazy" alt="Ultricies fusce porta elit" class="img-cover" />
-                                    </figure>
-
-                                    <div class="card-content">
-                                        <h3 class="h3">
-                                            <a href="#" class="card-title">Ultricies fusce porta elit</a>
-                                        </h3>
-
-                                        <p class="card-text">Mauris convallis non ligula non interdum. Gravida vulputate convallis tempus vestibulum cras imperdiet nun eu dolor.</p>
-
-                                        <ul class="card-meta-list">
-                                            <li class="card-meta-item">
-                                                <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
-
-                                                <time class="meta-text" datetime="2022-02-26">26 Feb 2022</time>
-                                            </li>
-
-                                            <li class="card-meta-item">
-                                                <ion-icon name="document-text-outline" aria-hidden="true"></ion-icon>
-
-                                                <span class="meta-text">Meeting</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
                     </div>
                 </section>
             </article>
@@ -415,15 +308,15 @@
                     </li>
 
                     <li>
-                        <address class="footer-text">Dimana-mana hatiku senang</address>
+                        <address class="footer-text">BookID | Indonesia</address>
                     </li>
 
                     <li>
-                        <a href="mailto:info@email.com" class="footer-link">info@email.com</a>
+                        <a href="mailto:bookid@email.com" class="footer-link">bookid@email.com</a>
                     </li>
 
                     <li>
-                        <a href="tel:001234567890" class="footer-link">00 (123) 456 78 90</a>
+                        <a href="tel:088888888888" class="footer-link">+62 888 8888 8888</a>
                     </li>
 
                     <a href="#" class="logo">
@@ -437,32 +330,33 @@
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Home</a>
+                        <a href="home.html" class="footer-link">Home</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Explore</a>
+                        <a href="explore.html" class="footer-link">Explore</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Rooms</a>
+                        <a href="rooms.html" class="footer-link">Rooms</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">Rooms</a>
+                        <a href="bookings.html" class="footer-link">Bookings</a>
                     </li>
 
                     <li>
-                        <a href="#" class="footer-link">About</a>
+                        <a href="about.html" class="footer-link">About</a>
                     </li>
                 </ul>
             </div>
         </footer>
 
-        <script src="config/config.js"></script>
-        <script src="js/pageprotection.js"></script>
-        <script src="js/logout.js"></script>
-        <script src="js/index.js"></script>
+        <script src="./config/config.js"></script>
+        <script src="./js/pageprotection.js"></script>
+        <script src="./js/logout.js"></script>
+        <script src="./js/getMe.js"></script>
+        <script src="./js/index.js"></script>
 
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

@@ -85,6 +85,7 @@ textarea {
     outline: none;
     resize: none;
     margin-bottom: 0.5rem;
+    font-size: 1rem;
 }
 .btn-group {
     display: flex;
@@ -112,6 +113,46 @@ textarea {
     color: var(--violet-blue-crayola);
 }
 .btn-group .btn.cancel:hover {
+    background: var(--light);
+}
+
+.purchase-info {
+    margin-top: 18px;
+}
+.purchase-info input,
+.purchase-info .btn {
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.purchase-info input {
+    width: 60px;
+}
+.purchase-info .btn {
+    cursor: pointer;
+    color: var(--white);
+    display: inline-block;
+    background-color: var(--violet-blue-crayola);
+    width: 170px;
+    transition: all 0.2s ease;
+}
+
+.purchase-info .btn:hover {
+    opacity: 0.8;
+}
+
+.btn.cancel {
+    background: var(--white);
+    color: var(--violet-blue-crayola);
+    border: 1px solid var(--violet-blue-crayola);
+}
+.btn.cancel:hover {
     background: var(--light);
 }
 

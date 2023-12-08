@@ -140,3 +140,10 @@ let subMenu = document.getElementById("subMenu");
 function toggleMenu() {
     subMenu.classList.toggle("open-menu");
 }
+
+getProfileInfo().then((profileInfo) => {
+    document.getElementById("userNameNav").innerHTML = profileInfo.name;
+
+    let userPhoto = document.getElementById("userPhotoNav");
+    userPhoto.src = `data:image/png;base64,${profileInfo.photo}`;
+});

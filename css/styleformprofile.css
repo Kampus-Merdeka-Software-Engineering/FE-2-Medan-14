@@ -228,7 +228,7 @@ nav ul li a {
     border-radius: 5em;
 }
 .form button:hover {
-    background: rgb(88, 56, 250);
+    opacity: 0.8;
 }
 
 .signup {
@@ -337,4 +337,18 @@ nav ul li a {
 
 .error-message {
     padding: 2.5%;
+}
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+@media (max-width: 527px) {
+    /**
+   * REUSED STYLE
+   */
+
+    nav ul {
+        display: none;
+    }
 }

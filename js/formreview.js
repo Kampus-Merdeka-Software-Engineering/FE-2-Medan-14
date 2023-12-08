@@ -2,6 +2,13 @@ const allStar = document.querySelectorAll(".rating .star");
 const ratingValue = document.querySelector(".rating input");
 const review = document.getElementById("review");
 
+const params = new URLSearchParams(window.location.search);
+const bookingId = params.get("bookingId");
+
+if (!bookingId) {
+    window.history.back();
+}
+
 let checker_rating = false;
 let checker_review = false;
 

@@ -56,6 +56,8 @@ if (bookingId) {
     endDate.value = tomorrow;
 
     totalDaysDisplay.innerHTML = "Total Days: " + calculateTotalDays(startDate.value, endDate.value) + " Days";
+} else {
+    window.history.back();
 }
 
 startDate.addEventListener("change", function (e) {

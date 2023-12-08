@@ -34,7 +34,6 @@ async function checkLogin() {
 
         return true; // User is logged in
     } catch (error) {
-        console.error(error); // Log the error for debugging
         return false; // User is not logged in
     }
 }
