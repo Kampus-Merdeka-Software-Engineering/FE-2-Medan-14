@@ -1,3 +1,6 @@
+// /*
+let boxes = [...document.querySelectorAll(".container .box-container .box")];
+
 /* 
 check box filter 
 */
@@ -124,23 +127,21 @@ arrowIcons.forEach((icon) => {
 
 // Function to sort the property cards
 function sortPropertyCards(criteria) {
-    const propertyCards = [...document.querySelectorAll(".box")];
     let sortedPropertyCards;
 
     if (criteria === "Most Popular") {
         // Sort the property cards by total booking
-        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-booking")) - Number(a.getAttribute("data-booking")));
+        sortedPropertyCards = boxes.sort((a, b) => Number(b.getAttribute("data-booking")) - Number(a.getAttribute("data-booking")));
     } else if (criteria === "Highest Rating") {
         // Sort the property cards by average rating
-        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-rating")) - Number(a.getAttribute("data-rating")));
+        sortedPropertyCards = boxes.sort((a, b) => Number(b.getAttribute("data-rating")) - Number(a.getAttribute("data-rating")));
     } else if (criteria === "Cheapest") {
         // Sort the property cards by price
-        sortedPropertyCards = propertyCards.sort((a, b) => Number(a.getAttribute("data-price")) - Number(b.getAttribute("data-price")));
+        sortedPropertyCards = boxes.sort((a, b) => Number(a.getAttribute("data-price")) - Number(b.getAttribute("data-price")));
     } else if (criteria === "Most Expensive") {
         // Sort the property cards by price in descending order
-        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-price")) - Number(a.getAttribute("data-price")));
+        sortedPropertyCards = boxes.sort((a, b) => Number(b.getAttribute("data-price")) - Number(a.getAttribute("data-price")));
     }
-    console.log(sortedPropertyCards);
 
     // Append the sorted property cards to the container
     const container = document.querySelector(".box-container");
@@ -163,13 +164,13 @@ tabs.forEach((tab) => {
     });
 });
 
-// // Find the active tab
-// const activeTab = Array.from(tabs).find((tab) => tab.classList.contains("active"));
+// Find the active tab
+const activeTab = Array.from(tabs).find((tab) => tab.classList.contains("active"));
 
-// // Sort the property cards based on the active tab when the page first loads
-// if (activeTab) {
-//     sortPropertyCards(activeTab.textContent);
-// }
+// Sort the property cards based on the active tab when the page first loads
+if (activeTab) {
+    sortPropertyCards(activeTab.textContent);
+}
 
 const dragging = (e) => {
     if (!isDragging) return;
