@@ -142,6 +142,7 @@ function sortPropertyCards(criteria) {
         // Sort the property cards by price in descending order
         sortedPropertyCards = boxes.sort((a, b) => Number(b.getAttribute("data-current-price")) - Number(a.getAttribute("data-current-price")));
     }
+    console.log(sortedPropertyCards);
 
     // Append the sorted property cards to the container
     const container = document.querySelector(".box-container");
