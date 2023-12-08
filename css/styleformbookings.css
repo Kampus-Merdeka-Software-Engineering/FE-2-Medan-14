@@ -386,6 +386,8 @@ body.nav-active {
 
 .user-pic {
     width: 40px;
+    height: 40px;
+    object-fit: cover;
     border-radius: 50%;
     cursor: pointer;
     margin-left: 30px;
@@ -438,8 +440,10 @@ nav ul li a {
 }
 
 .user-info img {
-    width: 60px;
+    object-fit: cover;
     border-radius: 50%;
+    width: 60px;
+    height: 60px;
     margin-right: 15px;
 }
 
@@ -849,8 +853,6 @@ article {
     color: hsla(10, 68%, 59%, 1);
 }
 
-
-
 /*-----------------------------------*\
   #FOOTER
 \*-----------------------------------*/
@@ -914,7 +916,6 @@ article {
     padding-inline: 24px;
     font-weight: var(--fw-700);
 }
-
 
 /*Responsive*/
 @media screen and (max-width: 500px) {
