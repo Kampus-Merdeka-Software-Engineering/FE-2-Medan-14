@@ -136,8 +136,6 @@ function sortPropertyCards(criteria) {
         sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-price")) - Number(a.getAttribute("data-price")));
     }
 
-    console.log(sortedPropertyCards);
-
     // Append the sorted property cards to the container
     const container = document.getElementById("listRooms");
     container.innerHTML = "";
