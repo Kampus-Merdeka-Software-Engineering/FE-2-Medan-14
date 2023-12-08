@@ -124,7 +124,6 @@ a {
 
 img {
     height: auto;
-    width: 100%;
     display: block;
 }
 
@@ -792,7 +791,7 @@ nav ul li a {
     color: var(--white);
     display: inline-block;
     background-color: var(--violet-blue-crayola);
-    width: 170px;
+    width: 144px;
 }
 
 .purchase-info .btn:hover {
@@ -803,6 +802,7 @@ nav ul li a {
     background: var(--white);
     color: var(--violet-blue-crayola);
     border: 1px solid var(--violet-blue-crayola);
+    width: 440px;
 }
 .btn.cancel:hover {
     background: var(--light);

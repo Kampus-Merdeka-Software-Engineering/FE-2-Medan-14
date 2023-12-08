@@ -124,7 +124,6 @@ a {
 
 img {
     height: auto;
-    width: 100%;
     display: block;
 }
 
@@ -799,7 +798,7 @@ nav ul li a {
     color: var(--white);
     display: inline-block;
     background-color: var(--violet-blue-crayola);
-    width: 255px;
+    width: 226px;
 }
 
 .purchase-info .btn:hover {
@@ -1201,7 +1200,7 @@ nav ul li a {
         margin-bottom: 45px;
     }
     .product-content {
-        margin-top: 18%;
+        margin-top: 23%;
     }
 
     /**

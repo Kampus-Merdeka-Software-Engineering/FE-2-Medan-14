@@ -16,28 +16,94 @@
         <script src="https://use.fontawesome.com/2e95bf0c1a.js"></script>
         <script src="https://kit.fontawesome.com/6f3e2f204d.js" crossorigin="anonymous"></script>
 
-        <link rel="stylesheet" href="css/styleformprofile.css" />
+        <link rel="stylesheet" href="css/styleformprofiles.css" />
     </head>
 
     <body>
+        <header class="header" data-header>
+            <div class="container">
+                <a href="home.html" class="logo">
+                    <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-light" />
+
+                    <img src="img/logo-white.png" width="74" height="24" alt="BookID home" class="logo-dark" />
+                </a>
+
+                <nav class="navbar" data-navbar>
+                    <div class="navbar-top">
+                        <a href="home.html" class="logo">
+                            <img src="img/logo.png" width="74" height="24" alt="BookID home" />
+                        </a>
+
+                        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                        </button>
+                    </div>
+
+                    <ul class="navbar-list">
+                        <li>
+                            <a href="home.html" class="navbar-link">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="explore.html" class="navbar-link">Explore</a>
+                        </li>
+
+                        <li>
+                            <a href="rooms.html" class="navbar-link">Rooms</a>
+                        </li>
+
+                        <li>
+                            <a href="bookings.html" class="navbar-link">Bookings</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html" class="navbar-link">About</a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <img src="" alt="" id="userPhotoNavbar" class="user-pic" onclick="toggleMenu()" />
+
+                <div class="sub-menu-wrap" id="subMenu">
+                    <div class="sub-menu">
+                        <a href="profile.html">
+                            <div class="user-info">
+                                <img id="userPhotoNav" src="" alt="" />
+                                <h3 id="userNameNav">Nama User</h3>
+                            </div>
+                        </a>
+                        <hr />
+
+                        <a href="editprofile.html" class="sub-menu-link">
+                            <img src="img/profile.png" />
+                            <p>Edit Profile</p>
+                            <span>></span>
+                        </a>
+
+                        <a href="#" id="logout" class="sub-menu-link">
+                            <img src="img/logout.png" />
+                            <p>Logout</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+
+                <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                    <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+                </button>
+
+                <div class="overlay" data-nav-toggler data-overlay></div>
+            </div>
+        </header>
+
         <div class="hero-header">
-            <nav>
-                <img src="img/logo-white.png" alt="" class="logo" />
-                <ul>
-                    <li><a href="home.html">Home</a></li>
-                    <li><a href="explore.html">Explore</a></li>
-                    <li><a href="rooms.html">Rooms</a></li>
-                    <li><a href="bookings.html">Bookings</a></li>
-                    <li><a href="about.html">About</a></li>
-                </ul>
-            </nav>
             <div class="form-login">
-                <section class="container">
+                <section class="container-profile">
                     <header>Edit Profile</header>
                     <div class="error-box">
                         <div class="error-message">Error message</div>
                     </div>
-                    <form action="#" class="form">
+                    <form action="#" class="form-profile">
                         <div class="input-box-photo">
                             <label>Photo (Click to update)</label>
                             <br />
@@ -92,11 +158,16 @@
         </div>
 
         <script src="./config/config.js"></script>
-        <!-- <script src="js/pageprotection.js"></script> -->
-        <script src="./js/validationdb.js"></script>
+        <!-- <script src="./js/pageprotection.js"></script> -->
+        <script src="./js/logout.js"></script>
         <script src="./js/getMe.js"></script>
+        <script src="./js/index.js"></script>
+        <script src="./js/validationdb.js"></script>
         <script src="./js/validationtool.js"></script>
         <script src="./js/regex.js"></script>
         <script src="./js/editprofile.js"></script>
+
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
