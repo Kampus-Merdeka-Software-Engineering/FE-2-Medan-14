@@ -159,14 +159,6 @@ tabs.forEach((tab) => {
     });
 });
 
-// Find the active tab
-const activeTab = Array.from(tabs).find((tab) => tab.classList.contains("active"));
-
-// Sort the property cards based on the active tab when the page first loads
-if (activeTab) {
-    sortPropertyCards(activeTab.textContent);
-}
-
 const dragging = (e) => {
     if (!isDragging) return;
     tabsBox.classList.add("dragging");
