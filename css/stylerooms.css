@@ -1170,13 +1170,15 @@ nav ul li a {
     cursor: pointer;
     font-size: 1.18rem;
     white-space: nowrap;
-    background: #f5f4fd;
     padding: 13px 20px;
     border-radius: 16px;
-    border: 1px solid #d8d5f2;
+    border: 1px solid #eeeeee;
+    background-color: #fff;
+    box-shadow: var(--shadow-2);
+    transition: all 0.2s ease-in-out;
 }
 .tabs-box .tab:hover {
-    background: #efedfb;
+    background: #e7edfe;
 }
 .tabs-box.dragging .tab {
     user-select: none;
