@@ -27,7 +27,7 @@ function generateHTML(item) {
             <div class="property-card">
                 <figure class="card-banner">
                     <a href="detailrooms.html?roomId=${item.id}">
-                        <img src="${item.photos[0].photo}" alt="${item.name}" class="w-100" />
+                        <img src="data:image/png;base64,${item.photos[0].photo}" alt="${item.name}" class="w-100" />
                     </a>
 
                     <div class="card-badge green">For Rent</div>
@@ -46,7 +46,7 @@ function generateHTML(item) {
                         <a href="detailrooms.html?roomId=${item.id}">${item.name} - ${item.category}</a>
                         <p class="card-rating">
                             <i class="fa-solid fa-star"></i>
-                            <span class="rating-text">${item.avgRating}</span>
+                            <span class="rating-text">${item.avgRating.toFixed(2)}</span>
                             <span class="total-booking">(${item.totalBooking})</span>
                         </p>
                     </h3>
@@ -55,19 +55,19 @@ function generateHTML(item) {
 
                     <ul class="card-list">
                         <li class="card-item">
-                            <strong>${item.bedroom}</strong>
+                            <strong>${item.bedroom.split(",")[0]}</strong>
                             <i class="fa-solid fa-bed"></i>
                             <span>Bedrooms</span>
                         </li>
 
                         <li class="card-item">
-                            <strong>${item.bathroom}</strong>
+                            <strong>${item.bathroom.split(",")[0]}</strong>
                             <i class="fa-solid fa-bath"></i>
                             <span>Bathrooms</span>
                         </li>
 
                         <li class="card-item">
-                            <strong>${item.roomSize}</strong>
+                            <strong>${item.roomSize.slice(0, -3)}</strong>
                             <i class="fa-regular fa-square"></i>
                             <span>m²</span>
                         </li>
