@@ -257,7 +257,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
             // rest of your code
             .then((response) => {
                 if (response.ok) {
-                    window.history.back();
+                    window.location.href = "profile.html";
                 } else {
                     response.json().then((data) => {
                         setErrorBox(data.msg);
