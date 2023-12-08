@@ -129,16 +129,16 @@ function sortPropertyCards(criteria) {
 
     if (criteria === "Most Popular") {
         // Sort the property cards by total booking
-        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-total-booking")) - Number(a.getAttribute("data-total-booking")));
+        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-booking")) - Number(a.getAttribute("data-booking")));
     } else if (criteria === "Highest Rating") {
         // Sort the property cards by average rating
-        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-avg-rating")) - Number(a.getAttribute("data-avg-rating")));
+        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-rating")) - Number(a.getAttribute("data-rating")));
     } else if (criteria === "Cheapest") {
         // Sort the property cards by price
-        sortedPropertyCards = propertyCards.sort((a, b) => Number(a.getAttribute("data-current-price")) - Number(b.getAttribute("data-current-price")));
+        sortedPropertyCards = propertyCards.sort((a, b) => Number(a.getAttribute("data-price")) - Number(b.getAttribute("data-price")));
     } else if (criteria === "Most Expensive") {
         // Sort the property cards by price in descending order
-        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-current-price")) - Number(a.getAttribute("data-current-price")));
+        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-price")) - Number(a.getAttribute("data-price")));
     }
     console.log(sortedPropertyCards);
 

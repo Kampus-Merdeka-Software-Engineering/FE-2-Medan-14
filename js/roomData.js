@@ -16,9 +16,9 @@ fetch(roomUrl, {
             let div = document.createElement("div");
             div.className = "box";
             div.dataset.category = item.category;
-            div.dataset.avgRating = item.avgRating;
-            div.dataset.totalBooking = item.totalBooking;
-            div.dataset.currentPrice = item.currentPrice;
+            div.dataset.rating = item.avgRating;
+            div.dataset.booking = item.totalBooking;
+            div.dataset.price = item.currentPrice;
 
             // Add the HTML for the property card
             div.innerHTML = `
