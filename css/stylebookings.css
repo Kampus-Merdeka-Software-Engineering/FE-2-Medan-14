@@ -776,7 +776,6 @@ input[type="radio"] {
 
 .rooms-card h2 {
     letter-spacing: 1px;
-    margin: 10px 0;
 }
 
 .rooms-preview {
@@ -1105,6 +1104,12 @@ input[type="radio"] {
         width: 100%;
         margin-inline: auto;
     }
+
+    .courses-container {
+        max-width: 540px;
+        width: 100%;
+        margin-inline: auto;
+    }
 }
 
 /**
@@ -1129,6 +1134,10 @@ input[type="radio"] {
    */
 
     .container {
+        max-width: 720px;
+    }
+
+    .courses-container {
         max-width: 720px;
     }
 
@@ -1163,6 +1172,10 @@ input[type="radio"] {
    */
 
     .container {
+        max-width: 960px;
+    }
+
+    .courses-container {
         max-width: 960px;
     }
 
@@ -1231,6 +1244,10 @@ input[type="radio"] {
         max-width: 1140px;
     }
 
+    .courses-container {
+        max-width: 1140px;
+    }
+
     .has-scrollbar > li {
         min-width: calc(30%);
     }
@@ -1255,6 +1272,10 @@ input[type="radio"] {
    */
 
     .container {
+        max-width: 1320px;
+    }
+
+    .courses-container {
         max-width: 1320px;
     }
 }
