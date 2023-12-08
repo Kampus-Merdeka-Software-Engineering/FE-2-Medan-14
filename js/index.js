@@ -148,8 +148,8 @@ function toggleMenu() {
 getProfileInfo().then((profileInfo) => {
     document.getElementById("userNameNav").innerHTML = profileInfo.name;
 
-    // let userPhoto = document.getElementById("userPhotoNav");
+    let userPhoto = document.getElementById("userPhotoNav");
     let userPhotoNavbar = document.getElementById("userPhotoNavbar");
-    // userPhoto.src = `data:image/png;base64,${profileInfo.photo}`;
+    userPhoto.src = `data:image/png;base64,${profileInfo.photo}`;
     userPhotoNavbar.src = `data:image/png;base64,${profileInfo.photo}`;
 });
