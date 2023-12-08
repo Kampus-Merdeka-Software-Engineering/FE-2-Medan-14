@@ -138,6 +138,9 @@ function sortPropertyCards(criteria) {
     } else if (criteria === "Cheapest") {
         // Sort the property cards by price
         sortedPropertyCards = boxes.sort((a, b) => Number(a.getAttribute("data-current-price")) - Number(b.getAttribute("data-current-price")));
+    } else if (criteria === "Most Expensive") {
+        // Sort the property cards by price in descending order
+        sortedPropertyCards = boxes.sort((a, b) => Number(b.getAttribute("data-current-price")) - Number(a.getAttribute("data-current-price")));
     }
 
     // Append the sorted property cards to the container
