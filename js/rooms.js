@@ -1,6 +1,3 @@
-// /*
-let boxes = [...document.querySelectorAll(".container .box-container .box")];
-
 /* 
 check box filter 
 */
@@ -127,20 +124,21 @@ arrowIcons.forEach((icon) => {
 
 // Function to sort the property cards
 function sortPropertyCards(criteria) {
+    const propertyCards = [...document.querySelectorAll(".box")];
     let sortedPropertyCards;
 
     if (criteria === "Most Popular") {
         // Sort the property cards by total booking
-        sortedPropertyCards = boxes.sort((a, b) => Number(b.getAttribute("data-total-booking")) - Number(a.getAttribute("data-total-booking")));
+        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-total-booking")) - Number(a.getAttribute("data-total-booking")));
     } else if (criteria === "Highest Rating") {
         // Sort the property cards by average rating
-        sortedPropertyCards = boxes.sort((a, b) => Number(b.getAttribute("data-avg-rating")) - Number(a.getAttribute("data-avg-rating")));
+        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-avg-rating")) - Number(a.getAttribute("data-avg-rating")));
     } else if (criteria === "Cheapest") {
         // Sort the property cards by price
-        sortedPropertyCards = boxes.sort((a, b) => Number(a.getAttribute("data-current-price")) - Number(b.getAttribute("data-current-price")));
+        sortedPropertyCards = propertyCards.sort((a, b) => Number(a.getAttribute("data-current-price")) - Number(b.getAttribute("data-current-price")));
     } else if (criteria === "Most Expensive") {
         // Sort the property cards by price in descending order
-        sortedPropertyCards = boxes.sort((a, b) => Number(b.getAttribute("data-current-price")) - Number(a.getAttribute("data-current-price")));
+        sortedPropertyCards = propertyCards.sort((a, b) => Number(b.getAttribute("data-current-price")) - Number(a.getAttribute("data-current-price")));
     }
     console.log(sortedPropertyCards);
 
