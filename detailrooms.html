@@ -106,8 +106,8 @@
                     <div class="card-wrapper">
                         <div class="card">
                             <div class="product-imgs">
-                                <div id="photoDisplay" class="img-display">
-                                    <div class="img-showcase">
+                                <div class="img-display">
+                                    <div id="photoDisplay" class="img-showcase">
                                         <img src="img/blog-1.jpg" alt="image" />
                                         <img src="img/hero-bg.jpg" alt="image" />
                                         <img src="img/shoe_3.jpg" alt="image" />
@@ -156,31 +156,31 @@
                                 <hr />
 
                                 <div class="product-detail">
-                                    <h2>about this rooms:</h2>
+                                    <h2>About this rooms:</h2>
                                     <ul>
                                         <li>
-                                            <span><i class="fa-solid fa-bars"></i> Category: Royal Room</span>
+                                            <span id="category"><i class="fa-solid fa-bars"></i> Category: Royal Room</span>
                                         </li>
                                         <li>
-                                            <span><i class="fa-solid fa-check"></i> Available Rooms: 10 Rooms</span>
+                                            <span id="roomQty"><i class="fa-solid fa-check"></i> Available Rooms: 10 Rooms</span>
                                         </li>
                                         <li>
-                                            <span><i class="fa-solid fa-bed"></i> Bedrooms: 2, Bed sheets, Wardrobe</span>
+                                            <span id="bedroom"><i class="fa-solid fa-bed"></i> Bedrooms: 2, Bed sheets, Wardrobe</span>
                                         </li>
                                         <li>
-                                            <span><i class="fa-solid fa-bath"></i> Bathrooms: 1, Hot water, Shower, Toiletries</span>
+                                            <span id="bathroom"><i class="fa-solid fa-bath"></i> Bathrooms: 1, Hot water, Shower, Toiletries</span>
                                         </li>
                                         <li>
-                                            <span><i class="fa-regular fa-square"></i> Room Size: 12 m²</span>
+                                            <span id="roomSize"><i class="fa-regular fa-square"></i> Room Size: 12 m²</span>
                                         </li>
                                         <li>
-                                            <span><i class="fa-solid fa-tv"></i> Media/Tech: Free WiFi, TV</span>
+                                            <span id="mediaTech"><i class="fa-solid fa-tv"></i> Media/Tech: Free WiFi, TV</span>
                                         </li>
                                         <li>
-                                            <span><i class="fa-solid fa-kitchen-set"></i> Kitchen: Refrigerator, Oven, Microwave</span>
+                                            <span id="kitchen"><i class="fa-solid fa-kitchen-set"></i> Kitchen: Refrigerator, Oven, Microwave</span>
                                         </li>
                                         <li>
-                                            <span><i class="fa-solid fa-bell-concierge"></i> Service: Daily cleaning service, Laundry</span>
+                                            <span id="service"><i class="fa-solid fa-bell-concierge"></i> Service: Daily cleaning service, Laundry</span>
                                         </li>
                                     </ul>
 
@@ -197,19 +197,19 @@
                                     <button id="cancel" class="btn cancel">Back</button>
                                 </div>
 
-                                <div class="testimonial-section" style="display: block">
+                                <div id="reviewBox" class="testimonial-section" style="display: block">
                                     <hr />
-                                    <h3>Ulasan</h3>
-                                    <h4>Menampilkan 1/10 Ulasan</h4>
+                                    <h3>Reviews</h3>
+                                    <h4 id="reviewCount">Showing 1/... Reviews</h4>
                                     <div class="testimonial-card">
                                         <div class="testimonial-profile">
                                             <div class="testimoni-top">
                                                 <div class="testimonial-picture">
-                                                    <img src="/img/user.png" alt="" />
+                                                    <img id="reviewUserPhoto" src="/img/user.png" alt="" />
                                                 </div>
                                                 <div class="user-name">
-                                                    <strong>Siti Badilah</strong>
-                                                    <span>Tanggal</span>
+                                                    <strong id="reviewUserName">Siti Badilah</strong>
+                                                    <span id="reviewDate">2023-10-10</span>
                                                 </div>
                                             </div>
 
@@ -222,7 +222,7 @@
                                             </div>
                                         </div>
                                         <div class="testimonial-comment">
-                                            <p>
+                                            <p id="reviewText">
                                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo asperiores iusto, quae corrupti reiciendis officiis rerum. Mollitia, qui? Magni deleniti quas, architecto totam adipisci earum
                                                 doloremque quisquam quia magnam ullam!
                                             </p>
@@ -298,6 +298,9 @@
         <script src="./js/getMe.js"></script>
         <script src="./js/index.js"></script>
         <script src="./js/detailrooms.js"></script>
+        <script src="./js/getRoom.js"></script>
+        <script src="./js//getRoomReviews.js"></script>
+        <script src="./js/detailroomsdata.js"></script>
         <script src="./js/cancel.js"></script>
 
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

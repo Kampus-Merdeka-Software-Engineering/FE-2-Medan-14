@@ -52,9 +52,6 @@ function setRating(rating, totalBooking) {
     ratingText.innerHTML = `${rating.toFixed(2)} (${totalBooking} rating)`;
 }
 
-// Call the function with the desired rating
-setRating(5, 1000);
-
 // setting stars rating reviews
 function setRatingReviews(rating) {
     if (!rating || rating < 1 || rating > 5) {
@@ -83,11 +80,3 @@ function setRatingReviews(rating) {
         stars[Math.floor(rating)].classList.add("fa-star-half-alt");
     }
 }
-
-// Call the function with the desired rating
-setRatingReviews(4);
-
-// booking button
-document.getElementById("booking").addEventListener("click", () => {
-    window.location.href = "formbookings.html?roomId=1";
-});
