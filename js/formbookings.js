@@ -143,11 +143,51 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
     if (checker_startDate == false || checker_endDate == false || checker_totalRoom == false) {
         // error handling
-
         setErrorBox("Please fill in the form correctly");
     } else {
-        // for debugging
-        window.location.href = "bookings.html";
+        // create booking
+        fetch(bookingUrl, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                roomId: roomId,
+                startDate: startDate.value,
+                endDate: endDate.value,
+                totalRoom: totalRoom.value,
+            }),
+            credentials: "include",
+        })
+            .then((response) => {
+                if (response.ok) {
+                    window.location.href = "bookings.html";
+                } else {
+                    response.json().then((data) => {
+                        setErrorBox(data.error);
+                        setError(startDate, "");
+                        setError(endDate, "");
+                        setError(totalRoom, "");
+                    });
+                    checker_startDate = false;
+                    checker_endDate = false;
+                    checker_totalRoom = false;
+                }
+            })
+            .catch((error) => {
+                setErrorBox(error.message);
+                setError(startDate, "");
+                setError(endDate, "");
+                setError(totalRoom, "");
+
+                checker_startDate = false;
+                checker_endDate = false;
+                checker_totalRoom = false;
+
+                startDate.value = "";
+                endDate.value = "";
+                totalRoom.value = "";
+            });
     }
 });
 
