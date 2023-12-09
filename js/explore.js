@@ -43,7 +43,7 @@ function generateHTML(item) {
                     </div>
 
                     <h3 class="h3 card-title">
-                        <a href="detailrooms.html?roomId=${item.id}">${item.name} - ${item.category}</a>
+                        <a href="detailrooms.html?roomId=${item.id}">${item.name} <br />- ${item.category}</a>
                         <p class="card-rating">
                             <i class="fa-solid fa-star"></i>
                             <span class="rating-text">${item.avgRating.toFixed(2)}</span>
