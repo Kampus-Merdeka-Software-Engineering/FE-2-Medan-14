@@ -5,26 +5,26 @@ if (!roomId) {
     window.history.back();
 }
 
-const photoDisplay = getElementById("photoDisplay");
-const photoSelect = getElementById("photoSelect");
-const roomName = getElementById("roomName");
-const currentPrice = getElementById("currentPrice");
-const discount = getElementById("discount");
-const normalPrice = getElementById("normalPrice");
-const category = getElementById("category");
-const roomQty = getElementById("roomQty");
-const bedroom = getElementById("bedroom");
-const bathroom = getElementById("bathroom");
-const roomSize = getElementById("roomSize");
-const mediaTech = getElementById("mediaTech");
-const kitchen = getElementById("kitchen");
-const service = getElementById("service");
-const description = getElementById("description");
-const reviewCount = getElementById("reviewCount");
-const reviewUserPhoto = getElementById("reviewUserPhoto");
-const reviewUserName = getElementById("reviewUserName");
-const reviewDate = getElementById("reviewDate");
-const reviewText = getElementById("reviewText");
+const photoDisplay = document.getElementById("photoDisplay");
+const photoSelect = document.getElementById("photoSelect");
+const roomName = document.getElementById("roomName");
+const currentPrice = document.getElementById("currentPrice");
+const discount = document.getElementById("discount");
+const normalPrice = document.getElementById("normalPrice");
+const category = document.getElementById("category");
+const roomQty = document.getElementById("roomQty");
+const bedroom = document.getElementById("bedroom");
+const bathroom = document.getElementById("bathroom");
+const roomSize = document.getElementById("roomSize");
+const mediaTech = document.getElementById("mediaTech");
+const kitchen = document.getElementById("kitchen");
+const service = document.getElementById("service");
+const description = document.getElementById("description");
+const reviewCount = document.getElementById("reviewCount");
+const reviewUserPhoto = document.getElementById("reviewUserPhoto");
+const reviewUserName = document.getElementById("reviewUserName");
+const reviewDate = document.getElementById("reviewDate");
+const reviewText = document.getElementById("reviewText");
 
 let roomData;
 let roomReviewsData;
