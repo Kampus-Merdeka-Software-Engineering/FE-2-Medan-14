@@ -1151,6 +1151,18 @@ article {
   #MEDIA QUERIES
 \*-----------------------------------*/
 
+@media (max-width: 574px) {
+    /**
+   * REUSED STYLE
+   */
+
+    .container {
+        max-width: 94%;
+        width: 100%;
+        margin-inline: auto;
+    }
+}
+
 /**
  * responsive for large than 575px screen
  */
