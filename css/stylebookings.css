@@ -762,7 +762,7 @@ input[type="radio"] {
     box-shadow: var(--shadow-2);
     display: flex;
     max-width: 100%;
-    margin: 20px;
+    margin-top: 20px;
     overflow: hidden;
     width: 82em;
 }
@@ -1109,7 +1109,6 @@ input[type="radio"] {
 
     .rooms-card {
         width: 100%;
-        margin-top: 20px;
         display: block;
     }
 
