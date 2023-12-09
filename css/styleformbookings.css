@@ -943,6 +943,10 @@ article {
     .image-box img {
         max-width: 100%;
     }
+
+    .form .column {
+        flex-wrap: wrap;
+    }
 }
 
 /**
