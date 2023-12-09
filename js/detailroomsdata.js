@@ -90,14 +90,14 @@ getRoomInfo(roomId)
         currentPrice.innerHTML = `Rp${roomData.currentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}/Malam`;
         discount.innerHTML = `${roomData.discount * 100}%`;
         normalPrice.innerHTML = `Rp${roomData.normalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
-        category.innerHTML = `Category: ${roomData.category}`;
-        roomQty.innerHTML = `Available Rooms: ${roomData.roomQty}`;
-        bedroom.innerHTML = `Bedrooms: ${roomData.bedroom}`;
-        bathroom.innerHTML = `Bathrooms: ${roomData.bathroom}`;
-        roomSize.innerHTML = `Room Size: ${roomData.roomSize}`;
-        mediaTech.innerHTML = `Media/Tech: ${roomData.mediaTech}`;
-        kitchen.innerHTML = `Kitchen: ${roomData.kitchen}`;
-        service.innerHTML = `Service: ${roomData.service}`;
+        category.innerHTML = `<i class="fa-solid fa-bars"></i> Category: ${roomData.category}`;
+        roomQty.innerHTML = `<i class="fa-solid fa-check"></i> Available Rooms: ${roomData.roomQty}`;
+        bedroom.innerHTML = `<i class="fa-solid fa-bed"></i> Bedrooms: ${roomData.bedroom}`;
+        bathroom.innerHTML = `<i class="fa-solid fa-bath"></i> Bathrooms: ${roomData.bathroom}`;
+        roomSize.innerHTML = `<i class="fa-regular fa-square"></i> Room Size: ${roomData.roomSize}`;
+        mediaTech.innerHTML = `<i class="fa-solid fa-tv"></i> Media/Tech: ${roomData.mediaTech}`;
+        kitchen.innerHTML = `<i class="fa-solid fa-kitchen-set"></i> Kitchen: ${roomData.kitchen}`;
+        service.innerHTML = `<i class="fa-solid fa-bell-concierge"></i> Service: ${roomData.service}`;
         description.innerHTML = roomData.description;
 
         const imgs = document.querySelectorAll(".img-select a");
