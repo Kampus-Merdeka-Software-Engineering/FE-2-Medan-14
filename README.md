@@ -22,7 +22,7 @@ Welcome to the official repository for the BookID website – your gateway to ha
 
 Ready to explore the world with BookID? Follow these simple steps:
 
-1. Visit [BookID Website]([link_to_website]https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14).
+1. Visit [BookID Website](https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14).
 2. Sign up for a personalized account.
 3. Start your journey by browsing and booking your ideal hotel.
 
