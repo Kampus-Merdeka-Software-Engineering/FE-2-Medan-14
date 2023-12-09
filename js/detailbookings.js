@@ -14,10 +14,7 @@ checkout.style.display = "none";
 review.style.display = "none";
 
 // Fetch data from the API
-fetch(`${bookingUrl}/${bookingId}`, {
-    credentials: "include", // Include credentials in the request
-})
-    .then((response) => response.json())
+getBookingInfo(bookingId)
     .then((data) => {
         // Update the HTML elements with the data
         document.getElementById("roomImageDisplay").src = `data:image/png;base64,${data.room.photos[0].photo}`;
