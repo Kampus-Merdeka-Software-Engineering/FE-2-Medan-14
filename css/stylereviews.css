@@ -898,6 +898,11 @@ nav ul li a {
     flex-direction: column;
     align-items: center;
 }
+
+#roomName {
+    margin-top: 150px;
+    margin-bottom: -108px;
+}
 .testimonial-card {
     box-shadow: var(--shadow-2);
     background-color: var(--white);

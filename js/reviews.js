@@ -5,37 +5,55 @@ if (!roomId) {
     window.history.back();
 }
 
-getRoomReviewsInfo(roomId).then((data) => {
-    roomReviewsData = data;
+const roomName = document.getElementById("roomName");
+const reviewBox = document.getElementById("reviewBox");
 
-    // Remove any existing reviews
-    while (reviewUserPhoto.firstChild) {
-        reviewUserPhoto.firstChild.remove();
+function generateStars(rating) {
+    let stars = "";
+    for (let i = 0; i < rating; i++) {
+        stars += '<i class="fas fa-star"></i>';
     }
+    return stars;
+}
 
-    // Add new reviews
-    for (let i = 0; i < roomReviewsData.length; i++) {
-        const reviewUserPhoto = document.createElement("img");
-        reviewUserPhoto.src = roomReviewsData[i].userPhoto;
-        reviewUserPhoto.alt = "User Photo";
-        reviewUserPhoto.classList.add("user-photo");
+let roomReviewsData = [];
+getRoomReviewsInfo(roomId)
+    .then((data) => {
+        roomReviewsData = data.bookings;
 
-        const reviewUserName = document.createElement("h3");
-        reviewUserName.textContent = roomReviewsData[i].userName;
+        roomName.innerHTML = `${data.name} Reviews`;
 
-        const reviewDate = document.createElement("p");
-        reviewDate.textContent = roomReviewsData[i].reviewDate;
+        // Remove any existing reviews
+        reviewBox.innerHTML = "";
 
-        const reviewText = document.createElement("p");
-        reviewText.textContent = roomReviewsData[i].reviewText;
+        // Add new reviews
+        roomReviewsData.forEach((review) => {
+            reviewBox.innerHTML += `
+                <div class="testimonial-card">
+                    <div class="testimonial-profile">
+                        <div class="testimoni-top">
+                            <div class="testimonial-picture">
+                                <img src="data:image/png;base64,${review.user.photo}" alt="" />
+                            </div>
+                            <div class="user-name">
+                                <strong>${review.user.name}</strong>
+                                <span>${new Date(review.updatedAt).toISOString().slice(0, 10)}</span>
+                            </div>
+                        </div>
 
-        const reviewBox = document.createElement("div");
-        reviewBox.classList.add("review-box");
-        reviewBox.appendChild(reviewUserPhoto);
-        reviewBox.appendChild(reviewUserName);
-        reviewBox.appendChild(reviewDate);
-        reviewBox.appendChild(reviewText);
-
-        reviewUserPhoto.appendChild(reviewBox);
-    }
-});
+                        <div class="testimonial-reviews">
+                            ${generateStars(review.rating)}
+                        </div>
+                    </div>
+                    <div class="testimonial-comment">
+                        <p>
+                            ${review.review}
+                        </p>
+                    </div>
+                </div>
+            `;
+        });
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    });
