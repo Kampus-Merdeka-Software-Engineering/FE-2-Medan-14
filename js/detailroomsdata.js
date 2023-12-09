@@ -80,6 +80,26 @@ getRoomInfo(roomId)
         kitchen.innerHTML = `Kitchen: ${roomData.kitchen}`;
         service.innerHTML = `Service: ${roomData.service}`;
         description.innerHTML = roomData.description;
+
+        const imgs = document.querySelectorAll(".img-select a");
+        const imgBtns = [...imgs];
+        let imgId = 1;
+
+        imgBtns.forEach((imgItem) => {
+            imgItem.addEventListener("click", (event) => {
+                event.preventDefault();
+                imgId = imgItem.dataset.id;
+                slideImage();
+            });
+        });
+
+        function slideImage() {
+            const displayWidth = document.querySelector(".img-showcase img:first-child").clientWidth;
+
+            document.querySelector(".img-showcase").style.transform = `translateX(${-(imgId - 1) * displayWidth}px)`;
+        }
+
+        window.addEventListener("resize", slideImage);
     })
     .catch((error) => {
         console.error("Error:", error);
@@ -97,7 +117,7 @@ getRoomReviewsInfo(roomId)
         reviewCount.innerHTML = `Showing 1/${data.bookings.length} Reviews`;
         reviewUserPhoto.src = `data:image/png;base64,${roomReviewsData.user.photo}`;
         reviewUserName.innerHTML = roomReviewsData.user.name;
-        reviewDate.innerHTML = roomReviewsData.updatedAt.toISOString().slice(0, 10);
+        reviewDate.innerHTML = new Date(roomReviewsData.updatedAt).toISOString().slice(0, 10);
         setRatingReviews(roomReviewsData.rating);
         reviewText.innerHTML = roomReviewsData.review;
     })
