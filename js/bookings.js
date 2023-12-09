@@ -28,7 +28,7 @@ function generateBookingCardHTML(item) {
                       <img class="rooms-preview" src="data:image/png;base64,${item.room.photos[0].photo}" alt="" />
                   </a>
                   <div class="rooms-info">
-                      <h6>${item.status} - ${item.createdAt}</h6>
+                      <h6>${item.status} - ${new Date(item.createdAt).toISOString().slice(0, 10)}</h6>
                       <a href="detailbookings.html?bookingId=${item.id}">
                           <h2>${item.id} - ${item.room.name}</h2>
                           <button class="btn">Detail</button>
