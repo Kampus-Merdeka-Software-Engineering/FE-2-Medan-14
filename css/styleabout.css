@@ -299,7 +299,7 @@ body.nav-active {
     font-size: var(--fs-5);
     font-weight: var(--fw-600);
     padding: 5px 20px;
-    background: hsla(9, 100%, 62%, 0.1);
+    background: var(--charcoal);
     width: max-content;
     border-radius: 50px;
     margin-inline: auto;
@@ -308,6 +308,7 @@ body.nav-active {
 
 .section-title {
     text-align: var(--text-align, center);
+    margin-top: 20px;
     margin-bottom: var(--margin-bottom, 50px);
 }
 
