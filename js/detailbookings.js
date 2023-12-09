@@ -55,8 +55,11 @@ checkout.addEventListener("click", () => {
         },
         body: JSON.stringify({}),
     })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((response) => {
+            if (response.ok) {
+                window.location.href = "bookings.html";
+            }
+        })
         .catch((error) => console.error("Error:", error));
 });
 
