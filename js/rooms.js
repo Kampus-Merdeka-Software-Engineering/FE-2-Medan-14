@@ -165,7 +165,7 @@ const dragging = (e) => {
 
     // Determine if this is a mouse event or a touch event
     const x = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
-    const walk = (x - startX) * 3; // 3 is the speed of the drag, adjust as needed
+    const walk = (x - startX) * 1; // speed of the drag, adjust as needed
     tabsBox.scrollLeft -= walk;
     startX = x; // Store the new touch/mouse position
 
