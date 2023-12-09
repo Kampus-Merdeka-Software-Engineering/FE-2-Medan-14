@@ -23,6 +23,7 @@ let checker_totalRoom = false;
 
 let bookingInfo;
 let roomInfo;
+let maxRoom;
 
 setSuccess(startDate);
 setSuccess(endDate);
@@ -49,6 +50,7 @@ getRoomInfo(roomId)
                 bookingInfo = data;
 
                 totalRoom.max = roomInfo.roomQty + bookingInfo.totalRoom;
+                maxRoom = roomInfo.roomQty + bookingInfo.totalRoom;
 
                 startDate.value = bookingInfo.startDate;
                 endDate.value = bookingInfo.endDate;
@@ -68,6 +70,7 @@ getRoomInfo(roomId)
             }
 
             totalRoom.max = roomInfo.roomQty;
+            maxRoom = roomInfo.roomQty;
 
             document.getElementById("submit").style.display = "inherit";
             document.getElementById("edit").style.display = "none";
@@ -146,7 +149,7 @@ totalRoom.addEventListener("change", function (e) {
     } else if (totalRoom.value < 1) {
         setError(totalRoom, "Must be at least 1");
         checker_totalRoom = false;
-    } else if (totalRoom.value > roomInfo.roomQty) {
+    } else if (totalRoom.value > maxRoom) {
         setError(totalRoom, "Must not exceed available room");
         checker_totalRoom = false;
     } else {
