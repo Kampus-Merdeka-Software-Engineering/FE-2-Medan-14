@@ -5,7 +5,7 @@ fetch(bookingUrl, {
     .then((response) => response.json())
     .then((data) => {
         // For each booking in the data...
-        data.bookings.forEach((booking) => {
+        data.forEach((booking) => {
             // Based on the booking status, append the HTML string to the corresponding box
             if (booking.status === "Pending") {
                 document.getElementById("pendingBox").innerHTML += generateBookingCardHTML(booking);
