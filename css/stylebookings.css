@@ -1146,10 +1146,6 @@ input[type="radio"] {
         width: 100%;
         margin-inline: auto;
     }
-
-    .btn {
-        display: none;
-    }
 }
 
 /**
