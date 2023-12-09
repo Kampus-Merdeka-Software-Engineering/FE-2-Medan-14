@@ -38,4 +38,4 @@ Join us in enhancing the BookID website! Fork this repository, make your improve
 
 [BookID Server API](https://github.com/Kampus-Merdeka-Software-Engineering/BE-2-Medan-14)
 
-Happy exploring with BookID!
+Thank you for choosing BookID Website! We hope it makes your vacation comfortable. If you have any questions or need assistance, please refer to the API documentation or contact our support team. Happy exploring with BookID!
