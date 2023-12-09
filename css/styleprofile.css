@@ -1232,6 +1232,30 @@ nav ul li a {
   #MEDIA QUERIES
 \*-----------------------------------*/
 
+@media (max-width: 574px) {
+    /**
+   * REUSED STYLE
+   */
+
+    .container {
+        max-width: 94%;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .info-profile {
+        display: block;
+    }
+
+    .input-box-photo {
+        position: relative;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+}
+
 /**
  * responsive for large than 575px screen
  */
