@@ -31,35 +31,35 @@ getBookingInfo(bookingId)
 
         if (data.status === "Pending") {
             edit.style.display = "";
+
+            edit.addEventListener("click", () => {
+                window.location.href = `formbookings.html?bookingId=${bookingId}&roomId=${data.room.id}`;
+            });
         } else if (data.status === "Processed") {
             checkout.style.display = "";
+
+            checkout.addEventListener("click", () => {
+                fetch(`${bookingUrl}/${bookingId}`, {
+                    method: "PATCH",
+                    credentials: "include",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({}),
+                })
+                    .then((response) => {
+                        if (response.ok) {
+                            window.location.href = "bookings.html";
+                        }
+                    })
+                    .catch((error) => console.error("Error:", error));
+            });
         } else if (data.status === "Checkout") {
             review.style.display = "";
+
+            review.addEventListener("click", () => {
+                window.location.href = `formreview.html?bookingId=${bookingId}`;
+            });
         }
     })
     .catch((error) => console.error("Error:", error));
-
-edit.addEventListener("click", () => {
-    window.location.href = `formbookings.html?bookingId=${bookingId}&roomId=${data.room.id}`;
-});
-
-checkout.addEventListener("click", () => {
-    fetch(`${bookingUrl}/${bookingId}`, {
-        method: "PATCH",
-        credentials: "include",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({}),
-    })
-        .then((response) => {
-            if (response.ok) {
-                window.location.href = "bookings.html";
-            }
-        })
-        .catch((error) => console.error("Error:", error));
-});
-
-review.addEventListener("click", () => {
-    window.location.href = `formreview.html?bookingId=${bookingId}`;
-});
