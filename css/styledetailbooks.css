@@ -906,13 +906,13 @@ nav ul li a {
  * responsive for large than 575px screen
  */
 
-@media (min-width: 0px) {
+@media (max-width: 574px) {
     /**
    * REUSED STYLE
    */
 
     .container {
-        max-width: 540px;
+        max-width: 94%;
         width: 100%;
         margin-inline: auto;
     }
