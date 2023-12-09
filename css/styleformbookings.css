@@ -947,13 +947,17 @@ article {
     .form .column {
         flex-wrap: wrap;
     }
+
+    .form {
+        margin-bottom: 15px;
+    }
 }
 
 /**
  * responsive for large than 575px screen
  */
 
-@media (max-width: 767px) {
+@media (min-width: 575px) and (max-width: 767px) {
     /**
    * REUSED STYLE
    */
