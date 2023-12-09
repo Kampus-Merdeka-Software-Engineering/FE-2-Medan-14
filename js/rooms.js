@@ -170,5 +170,10 @@ const dragStop = () => {
 };
 
 tabsBox.addEventListener("mousedown", () => (isDragging = true));
+tabsBox.addEventListener("touchstart", () => (isDragging = true));
+
 tabsBox.addEventListener("mousemove", dragging);
+tabsBox.addEventListener("touchmove", dragging);
+
 document.addEventListener("mouseup", dragStop);
+document.addEventListener("touchend", dragStop);
