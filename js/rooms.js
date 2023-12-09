@@ -157,17 +157,20 @@ tabs.forEach((tab) => {
     });
 });
 
-let startX = 0; // Add this line to store the initial touch/mouse position
+let startX;
+
+const startDragging = (e) => {
+    isDragging = true;
+    tabsBox.classList.add("dragging");
+    startX = e.type === "mousedown" ? e.clientX : e.touches[0].clientX;
+};
 
 const dragging = (e) => {
     if (!isDragging) return;
-    tabsBox.classList.add("dragging");
 
-    // Determine if this is a mouse event or a touch event
     const x = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
     const walk = (x - startX) * 1; // speed of the drag, adjust as needed
     tabsBox.scrollLeft -= walk;
-    startX = x; // Store the new touch/mouse position
 
     handleIcons(tabsBox.scrollLeft);
 };
@@ -177,11 +180,9 @@ const dragStop = () => {
     tabsBox.classList.remove("dragging");
 };
 
-tabsBox.addEventListener("mousedown", () => (isDragging = true));
-tabsBox.addEventListener("touchstart", () => (isDragging = true));
-
+tabsBox.addEventListener("mousedown", startDragging);
+tabsBox.addEventListener("touchstart", startDragging);
 tabsBox.addEventListener("mousemove", dragging);
 tabsBox.addEventListener("touchmove", dragging);
-
 document.addEventListener("mouseup", dragStop);
 document.addEventListener("touchend", dragStop);
