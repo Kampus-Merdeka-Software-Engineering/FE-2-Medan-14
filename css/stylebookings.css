@@ -1148,6 +1148,16 @@ input[type="radio"] {
     }
 }
 
+@media (max-width: 767px) {
+    /**
+   * REUSED STYLE
+   */
+
+    .btn {
+        display: none;
+    }
+}
+
 /**
  * responsive for large than 768px screen
  */
