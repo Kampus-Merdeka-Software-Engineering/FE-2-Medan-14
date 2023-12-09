@@ -1,8 +1,7 @@
 # BookID Website - FE-2-Medan-14
 
-Elevate Your Stay, Effortlessly Booked
-
 ![BookID Logo](img/logo.png)
+Elevate Your Stay, Effortlessly Booked
 
 ## Introduction
 
