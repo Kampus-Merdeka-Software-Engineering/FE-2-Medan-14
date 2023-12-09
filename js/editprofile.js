@@ -221,6 +221,8 @@ document.getElementById("submit").addEventListener("click", function (event) {
     if (checker_name == false || checker_phone == false || checker_email == false || checker_password == false || checker_confPassword == false || checker_photo == false) {
         // error handling
         setErrorBox("Please fill in the form correctly");
+    } else if (nameUser.value === profileInfo.name && phone.value === profileInfo.phone && email.value === profileInfo.email && password.value === "" && confPassword.value === "" && base64String === profileInfo.photo) {
+        window.location.href = "profile.html";
     } else {
         let data = {};
 
@@ -254,7 +256,6 @@ document.getElementById("submit").addEventListener("click", function (event) {
             body: JSON.stringify(data),
             credentials: "include",
         })
-            // rest of your code
             .then((response) => {
                 if (response.ok) {
                     window.location.href = "profile.html";

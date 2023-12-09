@@ -40,7 +40,7 @@ getBookingInfo(bookingId)
     .catch((error) => console.error("Error:", error));
 
 edit.addEventListener("click", () => {
-    window.location.href = `formbookings.html?bookingId=${bookingId}`;
+    window.location.href = `formbookings.html?bookingId=${bookingId}&roomId=${data.room.id}`;
 });
 
 checkout.addEventListener("click", () => {

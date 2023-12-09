@@ -7,17 +7,22 @@ const currentPriceDisplay = document.getElementById("currentPriceDisplay");
 const totalDaysDisplay = document.getElementById("totalDaysDisplay");
 const totalRoomDisplay = document.getElementById("totalRoomDisplay");
 const totalPriceDisplay = document.getElementById("totalPriceDisplay");
+const photoRoomDisplay = document.getElementById("photoRoomDisplay");
 
 const params = new URLSearchParams(window.location.search);
 const roomId = params.get("roomId");
 const bookingId = params.get("bookingId");
 
-const currentPrice = 100000;
-currentPriceDisplay.innerHTML = "Current Price: Rp" + currentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+if (!roomId && !bookingId) {
+    window.history.back();
+}
 
 let checker_startDate = true;
 let checker_endDate = true;
 let checker_totalRoom = false;
+
+let bookingInfo;
+let roomInfo;
 
 setSuccess(startDate);
 setSuccess(endDate);
@@ -28,27 +33,44 @@ let tomorrow = dateFormatter(new Date(new Date().getTime() + 24 * 60 * 60 * 1000
 startDate.min = today;
 endDate.min = tomorrow;
 
-if (bookingId) {
+getRoomInfo(roomId)
+    .then((data) => {
+        roomInfo = data;
+
+        totalRoom.max = roomInfo.roomQty;
+
+        roomNameDisplay.innerHTML = roomInfo.name;
+        currentPriceDisplay.innerHTML = `Current Price: Rp${roomInfo.currentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}/Night`;
+        photoRoomDisplay.src = `data:image/png;base64,${roomInfo.photos[0].photo}`;
+    })
+    .catch((error) => {
+        setErrorBox(error.message);
+    });
+
+if (bookingId && roomId) {
     document.getElementById("submit").style.display = "none";
     document.getElementById("edit").style.display = "inherit";
 
-    // for debugging
-    startDate.value = "2023-12-12";
-    endDate.value = "2023-12-18";
-    totalRoom.value = "3";
+    getBookingInfo(bookingId).then((data) => {
+        bookingInfo = data;
+
+        startDate.value = bookingInfo.startDate;
+        endDate.value = bookingInfo.endDate;
+        totalRoom.value = bookingInfo.totalRoom;
+
+        totalDaysDisplay.innerHTML = `Total Days: ${calculateTotalDays(bookingInfo.startDate, bookingInfo.endDate)} Days`;
+        totalRoomDisplay.innerHTML = `Total Rooms: ${bookingInfo.totalRoom} Rooms`;
+        totalPriceDisplay.innerHTML = `Total: Rp${bookingInfo.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
+    });
 
     setSuccess(totalRoom);
     checker_totalRoom = true;
-
-    roomNameDisplay.innerHTML = "Test";
-    totalDaysDisplay.innerHTML = "Total Days: " + calculateTotalDays(startDate.value, endDate.value) + " Days";
-    totalRoomDisplay.innerHTML = "Total Rooms: " + totalRoom.value + " Rooms";
-    totalPriceDisplay.innerHTML =
-        "Total: Rp" +
-        calculateTotalPrice(calculateTotalDays(startDate.value, endDate.value), totalRoom.value, currentPrice)
-            .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 } else if (roomId) {
+    if (roomInfo.roomQty <= 0) {
+        alert("No room available");
+        window.history.back();
+    }
+
     document.getElementById("submit").style.display = "inherit";
     document.getElementById("edit").style.display = "none";
 
@@ -122,6 +144,9 @@ totalRoom.addEventListener("change", function (e) {
     } else if (totalRoom.value < 1) {
         setError(totalRoom, "Must be at least 1");
         checker_totalRoom = false;
+    } else if (totalRoom.value > roomInfo.roomQty) {
+        setError(totalRoom, "Must not exceed available room");
+        checker_totalRoom = false;
     } else {
         setSuccess(totalRoom);
         checker_totalRoom = true;
@@ -172,6 +197,10 @@ document.getElementById("submit").addEventListener("click", function (event) {
                     checker_startDate = false;
                     checker_endDate = false;
                     checker_totalRoom = false;
+
+                    startDate.value = "";
+                    endDate.value = "";
+                    totalRoom.value = "";
                 }
             })
             .catch((error) => {
@@ -195,11 +224,72 @@ document.getElementById("edit").addEventListener("click", function (event) {
     event.preventDefault(); // urgent to prevent form submission
 
     if (checker_startDate == false || checker_endDate == false || checker_totalRoom == false) {
-        // error handling
-
         setErrorBox("Please fill in the form correctly");
-    } else {
-        // for debugging
+    } else if (startDate.value === bookingInfo.startDate && endDate.value === bookingInfo.endDate && totalRoom.value === bookingInfo.totalRoom) {
         window.location.href = "bookings.html";
+    } else {
+        let data = {};
+
+        data.roomId = roomId;
+
+        if (startDate.value !== bookingInfo.startDate) {
+            data.startDate = startDate.value;
+        }
+
+        if (endDate.value !== bookingInfo.endDate) {
+            data.endDate = endDate.value;
+        }
+
+        if (totalRoom.value !== bookingInfo.totalRoom) {
+            data.totalRoom = totalRoom.value;
+        }
+
+        fetch(`${bookingUrl}/${bookingId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+            credentials: "include",
+        })
+            .then((response) => {
+                if (response.ok) {
+                    window.location.href = "bookings.html";
+                } else {
+                    response.json().then((data) => {
+                        setErrorBox(data.error);
+                        setSuccess(startDate);
+                        setSuccess(endDate);
+                        setSuccess(totalRoom);
+                    });
+                    checker_startDate = true;
+                    checker_endDate = true;
+                    checker_totalRoom = true;
+
+                    startDate.value = bookingInfo.startDate;
+                    endDate.value = bookingInfo.endDate;
+                    totalRoom.value = bookingInfo.totalRoom;
+                    totalDaysDisplay.innerHTML = `Total Days: ${calculateTotalDays(bookingInfo.startDate, bookingInfo.endDate)} Days`;
+                    totalRoomDisplay.innerHTML = `Total Rooms: ${bookingInfo.totalRoom} Rooms`;
+                    totalPriceDisplay.innerHTML = `Total: Rp${bookingInfo.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
+                }
+            })
+            .catch((error) => {
+                setErrorBox(error.message);
+                setSuccess(startDate);
+                setSuccess(endDate);
+                setSuccess(totalRoom);
+
+                checker_startDate = true;
+                checker_endDate = true;
+                checker_totalRoom = true;
+
+                startDate.value = bookingInfo.startDate;
+                endDate.value = bookingInfo.endDate;
+                totalRoom.value = bookingInfo.totalRoom;
+                totalDaysDisplay.innerHTML = `Total Days: ${calculateTotalDays(bookingInfo.startDate, bookingInfo.endDate)} Days`;
+                totalRoomDisplay.innerHTML = `Total Rooms: ${bookingInfo.totalRoom} Rooms`;
+                totalPriceDisplay.innerHTML = `Total: Rp${bookingInfo.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
+            });
     }
 });

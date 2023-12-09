@@ -164,7 +164,6 @@ document.getElementById("submit").addEventListener("click", function (event) {
             credentials: "include",
         })
             .then((response) => {
-                console.log(response.status); // Log the response status code
                 if (response.ok) {
                     // If signup is successful, redirect to login page
                     window.location.href = "login.html";
