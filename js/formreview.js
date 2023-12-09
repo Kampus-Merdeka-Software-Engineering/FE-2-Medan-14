@@ -54,10 +54,49 @@ document.getElementById("submit").addEventListener("click", function (event) {
 
     if (checker_rating === false || checker_review === false) {
         // error handling
-
         setErrorBox("Please fill in the form correctly");
     } else {
-        // for debugging
-        window.location.href = "bookings.html";
+        fetch(`${bookingUrl}/${bookingId}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                rating: ratingValue.value,
+                review: review.value,
+            }),
+            credentials: "include",
+        })
+            .then((response) => {
+                if (response.ok) {
+                    window.location.href = "bookings.html";
+                } else {
+                    response.json().then((data) => {
+                        setErrorBox(data.msg);
+                        setError(review, "");
+                    });
+                    checker_rating = false;
+                    checker_review = false;
+
+                    allStar.forEach((item) => {
+                        item.classList.replace("bxs-star", "bx-star");
+                        item.classList.remove("active");
+                    });
+                    review.value = "";
+                }
+            })
+            .catch((error) => {
+                setErrorBox(error.message);
+                setError(review, "");
+
+                checker_rating = false;
+                checker_review = false;
+
+                allStar.forEach((item) => {
+                    item.classList.replace("bxs-star", "bx-star");
+                    item.classList.remove("active");
+                });
+                review.value = "";
+            });
     }
 });

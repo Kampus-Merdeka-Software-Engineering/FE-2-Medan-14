@@ -175,7 +175,7 @@ document.getElementById("submit").addEventListener("click", function (event) {
         // error handling
         setErrorBox("Please fill in the form correctly");
     } else {
-        // create booking
+        // create a new booking
         fetch(bookingUrl, {
             method: "POST",
             headers: {
@@ -194,32 +194,32 @@ document.getElementById("submit").addEventListener("click", function (event) {
                     window.location.href = "bookings.html";
                 } else {
                     response.json().then((data) => {
-                        setErrorBox(data.error);
-                        setError(startDate, "");
-                        setError(endDate, "");
+                        setErrorBox(data.msg);
+                        setSuccess(startDate);
+                        setSuccess(endDate);
                         setError(totalRoom, "");
                     });
-                    checker_startDate = false;
-                    checker_endDate = false;
+                    checker_startDate = true;
+                    checker_endDate = true;
                     checker_totalRoom = false;
 
-                    startDate.value = "";
-                    endDate.value = "";
+                    startDate.value = today;
+                    endDate.value = tomorrow;
                     totalRoom.value = "";
                 }
             })
             .catch((error) => {
                 setErrorBox(error.message);
-                setError(startDate, "");
-                setError(endDate, "");
+                setSuccess(startDate);
+                setSuccess(endDate);
                 setError(totalRoom, "");
 
-                checker_startDate = false;
-                checker_endDate = false;
+                checker_startDate = true;
+                checker_endDate = true;
                 checker_totalRoom = false;
 
-                startDate.value = "";
-                endDate.value = "";
+                startDate.value = today;
+                endDate.value = tomorrow;
                 totalRoom.value = "";
             });
     }
@@ -229,6 +229,7 @@ document.getElementById("edit").addEventListener("click", function (event) {
     event.preventDefault(); // urgent to prevent form submission
 
     if (checker_startDate == false || checker_endDate == false || checker_totalRoom == false) {
+        // error handling
         setErrorBox("Please fill in the form correctly");
     } else if (startDate.value === bookingInfo.startDate && endDate.value === bookingInfo.endDate && totalRoom.value === bookingInfo.totalRoom) {
         window.location.href = "bookings.html";
@@ -249,6 +250,7 @@ document.getElementById("edit").addEventListener("click", function (event) {
             data.totalRoom = totalRoom.value;
         }
 
+        // update the booking
         fetch(`${bookingUrl}/${bookingId}`, {
             method: "PATCH",
             headers: {
@@ -262,7 +264,7 @@ document.getElementById("edit").addEventListener("click", function (event) {
                     window.location.href = "bookings.html";
                 } else {
                     response.json().then((data) => {
-                        setErrorBox(data.error);
+                        setErrorBox(data.msg);
                         setSuccess(startDate);
                         setSuccess(endDate);
                         setSuccess(totalRoom);
