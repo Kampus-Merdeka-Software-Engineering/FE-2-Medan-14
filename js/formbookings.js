@@ -37,8 +37,6 @@ getRoomInfo(roomId)
     .then((data) => {
         roomInfo = data;
 
-        totalRoom.max = roomInfo.roomQty;
-
         roomNameDisplay.innerHTML = roomInfo.name;
         currentPriceDisplay.innerHTML = `Current Price: Rp${roomInfo.currentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}/Night`;
         photoRoomDisplay.src = `data:image/png;base64,${roomInfo.photos[0].photo}`;
@@ -49,6 +47,8 @@ getRoomInfo(roomId)
 
             getBookingInfo(bookingId).then((data) => {
                 bookingInfo = data;
+
+                totalRoom.max = roomInfo.roomQty + bookingInfo.totalRoom;
 
                 startDate.value = bookingInfo.startDate;
                 endDate.value = bookingInfo.endDate;
@@ -66,6 +66,8 @@ getRoomInfo(roomId)
                 alert("No room available");
                 window.history.back();
             }
+
+            totalRoom.max = roomInfo.roomQty;
 
             document.getElementById("submit").style.display = "inherit";
             document.getElementById("edit").style.display = "none";
