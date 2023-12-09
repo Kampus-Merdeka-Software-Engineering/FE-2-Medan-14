@@ -5,14 +5,6 @@ if (!roomId) {
     window.history.back();
 }
 
-btnBooking.addEventListener("click", () => {
-    window.location.href = `formbookings.html?roomId=${roomId}`;
-});
-
-btnViewComment.addEventListener("click", () => {
-    window.location.href = `reviews.html?roomId=${roomId}`;
-});
-
 const photoDisplay = document.getElementById("photoDisplay");
 const photoSelect = document.getElementById("photoSelect");
 const roomName = document.getElementById("roomName");
@@ -36,6 +28,14 @@ const reviewText = document.getElementById("reviewText");
 
 const btnBooking = document.getElementById("booking");
 const btnViewComment = document.getElementById("viewcomment");
+
+btnBooking.addEventListener("click", () => {
+    window.location.href = `formbookings.html?roomId=${roomId}`;
+});
+
+btnViewComment.addEventListener("click", () => {
+    window.location.href = `reviews.html?roomId=${roomId}`;
+});
 
 let roomData;
 let roomReviewsData;
