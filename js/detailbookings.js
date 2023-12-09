@@ -1,13 +1,63 @@
+const params = new URLSearchParams(window.location.search);
+const bookingId = params.get("bookingId");
+
+if (!bookingId) {
+    window.history.back();
+}
+
 const edit = document.getElementById("edit");
 const checkout = document.getElementById("checkout");
 const review = document.getElementById("review");
 
+edit.style.display = "none";
+checkout.style.display = "none";
+review.style.display = "none";
+
+// Fetch data from the API
+fetch(`${bookingUrl}/${bookingId}`, {
+    credentials: "include", // Include credentials in the request
+})
+    .then((response) => response.json())
+    .then((data) => {
+        // Update the HTML elements with the data
+        document.getElementById("roomImageDisplay").src = `data:image/png;base64,${data.room.photos[0].photo}`;
+        document.getElementById("roomNameDisplay").innerHTML = data.room.name;
+        document.getElementById("currentPriceDisplay").innerHTML = `Current Price: Rp${data.room.currentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
+        document.getElementById("bookingsDateDisplay").innerHTML = `Booking Date: ${data.startDate} to ${data.endDate} (${calculateTotalDays(data.startDate, data.endDate)} Days)`;
+        document.getElementById("totalRoomDisplay").innerHTML = `Total Rooms: ${data.totalRoom} Rooms`;
+        document.getElementById("totalPriceDisplay").innerHTML = `Total Price: Rp${data.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
+
+        document.getElementById("roomDetailLinkPhoto").href = `detailrooms.html?roomId=${data.room.id}`;
+        document.getElementById("roomDetailLinkName").href = `detailrooms.html?roomId=${data.room.id}`;
+
+        if (data.status === "Pending") {
+            edit.style.display = "";
+        } else if (data.status === "Processed") {
+            checkout.style.display = "";
+        } else if (data.status === "Checkout") {
+            review.style.display = "";
+        }
+    })
+    .catch((error) => console.error("Error:", error));
+
 edit.addEventListener("click", () => {
-    window.location.href = "formbookings.html?bookingId=1";
+    window.location.href = `formbookings.html?bookingId=${bookingId}`;
 });
 
-checkout.addEventListener("click", () => {});
+checkout.addEventListener("click", () => {
+    fetch(`${bookingUrl}/${bookingId}`, {
+        method: "PATCH",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({}),
+    })
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        .catch((error) => console.error("Error:", error));
+});
 
 review.addEventListener("click", () => {
-    window.location.href = "formreview.html?bookingId=1";
+    window.location.href = `formreview.html?bookingId=${bookingId}`;
 });

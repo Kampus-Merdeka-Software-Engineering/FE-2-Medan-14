@@ -802,7 +802,6 @@ nav ul li a {
     background: var(--white);
     color: var(--violet-blue-crayola);
     border: 1px solid var(--violet-blue-crayola);
-    width: 440px;
 }
 .btn.cancel:hover {
     background: var(--light);
