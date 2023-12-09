@@ -34,4 +34,8 @@ We value your feedback! If you have any suggestions, encounter issues, or just w
 
 Join us in enhancing the BookID website! Fork this repository, make your improvements, and submit a pull request. Let's work together to make every user's experience exceptional.
 
+## Server
+
+[BookID Server API](https://github.com/Kampus-Merdeka-Software-Engineering/BE-2-Medan-14)
+
 Happy exploring with BookID!
