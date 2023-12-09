@@ -1072,6 +1072,7 @@ nav ul li a {
     .img-item img {
         max-width: 94%;
         width: 100%;
+        height: 88px;
     }
 }
 
