@@ -1018,6 +1018,10 @@ nav ul li a {
     color: #ffba0a;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 .navigation-header {
     margin-top: 7em;
     display: flex;

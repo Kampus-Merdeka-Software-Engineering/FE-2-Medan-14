@@ -42,7 +42,7 @@ fetch(roomUrl, {
 
                         <h3 class="h3 card-title">
                             <a href="detailrooms.html?roomId=${item.id}">${item.name} <br />- ${item.category}</a>
-                            <p class="card-rating">
+                            <p class="card-rating ${item.totalBooking < 0 ? "hidden" : ""}">
                                 <i class="fa-solid fa-star"></i>
                                 <span class="rating-text">${item.avgRating.toFixed(2)}</span>
                                 <span class="total-booking">(${item.totalBooking})</span>
