@@ -1059,6 +1059,12 @@ nav ul li a {
 \*-----------------------------------*/
 
 @media (max-width: 574px) {
+    .container {
+        max-width: 94%;
+        width: 100%;
+        margin-inline: auto;
+    }
+
     .product-imgs {
         margin-top: 100px;
     }
