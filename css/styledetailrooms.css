@@ -1058,6 +1058,12 @@ nav ul li a {
   #MEDIA QUERIES
 \*-----------------------------------*/
 
+@media (max-width: 574px) {
+    .product-imgs {
+        margin-top: 100px;
+    }
+}
+
 /**
  * responsive for large than 575px screen
  */
