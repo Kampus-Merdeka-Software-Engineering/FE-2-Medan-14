@@ -661,6 +661,9 @@ nav ul li a {
 }
 .img-showcase img {
     min-height: 100%;
+    max-width: 560px;
+    max-height: 350px;
+    object-fit: contain;
 }
 .img-select {
     display: flex;

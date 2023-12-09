@@ -21,9 +21,11 @@ fetch(`${bookingUrl}/${bookingId}`, {
     .then((data) => {
         // Update the HTML elements with the data
         document.getElementById("roomImageDisplay").src = `data:image/png;base64,${data.room.photos[0].photo}`;
-        document.getElementById("roomNameDisplay").innerHTML = data.room.name;
+        document.getElementById("roomNameDisplay").innerHTML = `${data.id} - ${data.room.name}`;
+        document.getElementById("bookingsDateDisplay").innerHTML = `Booking Date: ${new Date(data.createdAt).toISOString().slice(0, 10)}`;
+        document.getElementById("bookingsStatus").innerHTML = `Status: ${data.status}`;
         document.getElementById("currentPriceDisplay").innerHTML = `Current Price: Rp${data.room.currentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
-        document.getElementById("bookingsDateDisplay").innerHTML = `Booking Date: ${data.startDate} to ${data.endDate} (${calculateTotalDays(data.startDate, data.endDate)} Days)`;
+        document.getElementById("bookingsDurationDisplay").innerHTML = `Booking Duration: ${data.startDate} to ${data.endDate} (${calculateTotalDays(data.startDate, data.endDate)} Days)`;
         document.getElementById("totalRoomDisplay").innerHTML = `Total Rooms: ${data.totalRoom} Rooms`;
         document.getElementById("totalPriceDisplay").innerHTML = `Total Price: Rp${data.totalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
 
