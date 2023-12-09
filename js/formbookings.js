@@ -104,7 +104,7 @@ startDate.addEventListener("change", function (e) {
         if (totalRoom.value != "") {
             totalPriceDisplay.innerHTML =
                 "Total: Rp" +
-                calculateTotalPrice(calculateTotalDays(startDate.value, endDate.value), totalRoom.value, currentPrice)
+                calculateTotalPrice(calculateTotalDays(startDate.value, endDate.value), totalRoom.value, roomInfo.currentPrice)
                     .toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
@@ -130,7 +130,7 @@ endDate.addEventListener("change", function (e) {
         if (totalRoom.value != "") {
             totalPriceDisplay.innerHTML =
                 "Total: Rp" +
-                calculateTotalPrice(calculateTotalDays(startDate.value, endDate.value), totalRoom.value, currentPrice)
+                calculateTotalPrice(calculateTotalDays(startDate.value, endDate.value), totalRoom.value, roomInfo.currentPrice)
                     .toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
@@ -156,7 +156,7 @@ totalRoom.addEventListener("change", function (e) {
         if (startDate.value != "" && endDate.value != "") {
             totalPriceDisplay.innerHTML =
                 "Total: Rp" +
-                calculateTotalPrice(calculateTotalDays(startDate.value, endDate.value), totalRoom.value, currentPrice)
+                calculateTotalPrice(calculateTotalDays(startDate.value, endDate.value), totalRoom.value, roomInfo.currentPrice)
                     .toString()
                     .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
         }
