@@ -1120,6 +1120,10 @@ input[type="radio"] {
         max-width: 100%;
         width: 100%;
     }
+
+    .container-tab nav label {
+        font-size: 14px;
+    }
 }
 
 /**
