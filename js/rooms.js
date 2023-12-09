@@ -157,10 +157,18 @@ tabs.forEach((tab) => {
     });
 });
 
+let startX = 0; // Add this line to store the initial touch/mouse position
+
 const dragging = (e) => {
     if (!isDragging) return;
     tabsBox.classList.add("dragging");
-    tabsBox.scrollLeft -= e.movementX;
+
+    // Determine if this is a mouse event or a touch event
+    const x = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
+    const walk = (x - startX) * 3; // 3 is the speed of the drag, adjust as needed
+    tabsBox.scrollLeft -= walk;
+    startX = x; // Store the new touch/mouse position
+
     handleIcons(tabsBox.scrollLeft);
 };
 
