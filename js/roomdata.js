@@ -37,7 +37,7 @@ fetch(roomUrl, {
                                 <span class="discount">${item.discount * 100}%</span>
                                 <span class="normal-price">Rp${item.normalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</span>
                             </p>
-                            <h4>Rp${item.currentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}/Malam</h4>
+                            <h4>Rp${item.currentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}/Night</h4>
                         </div>
 
                         <h3 class="h3 card-title">

@@ -87,7 +87,7 @@ getRoomInfo(roomId)
 
         roomName.innerHTML = roomData.name;
         setRating(roomData.avgRating, roomData.totalBooking);
-        currentPrice.innerHTML = `Rp${roomData.currentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}/Malam`;
+        currentPrice.innerHTML = `Rp${roomData.currentPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}/Night`;
         discount.innerHTML = `${roomData.discount * 100}%`;
         normalPrice.innerHTML = `Rp${roomData.normalPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`;
         category.innerHTML = `<i class="fa-solid fa-bars"></i> Category: ${roomData.category}`;
