@@ -719,6 +719,7 @@ nav ul li a {
 .property-card .card-content {
     padding: 15px;
     border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+    min-height: 357.72px;
 }
 
 .card-price {
@@ -736,6 +737,13 @@ nav ul li a {
 .property-card .card-title {
     --font-weight: var(--fw-600);
     margin-bottom: 15px;
+}
+
+.property-card .card-title a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .property-card .card-title > a:is(:hover, :focus) {

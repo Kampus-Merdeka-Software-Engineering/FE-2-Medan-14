@@ -22,6 +22,7 @@ window.addEventListener("resize", slideImage);
 function setRating(rating, totalBooking) {
     if (!rating || !totalBooking || rating < 1 || rating > 5 || totalBooking < 1) {
         document.getElementById("productRating").style.display = "none";
+        document.getElementById("ratingHr").style.display = "none";
         return;
     }
 

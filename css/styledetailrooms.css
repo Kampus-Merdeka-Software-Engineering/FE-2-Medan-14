@@ -903,6 +903,10 @@ nav ul li a {
 .testimonial-section {
     margin-top: 1em;
 }
+
+.testimonial-section hr {
+    margin-bottom: 20px;
+}
 .testimonial-card {
     box-shadow: var(--shadow-2);
     background-color: var(--white);

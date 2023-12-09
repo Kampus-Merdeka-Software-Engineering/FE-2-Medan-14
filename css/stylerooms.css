@@ -722,6 +722,7 @@ nav ul li a {
 .property-card .card-content {
     padding: 15px;
     border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+    min-height: 357.72px;
 }
 
 .card-price {
@@ -743,6 +744,13 @@ nav ul li a {
 .property-card .card-title {
     --font-weight: var(--fw-600);
     margin-bottom: 15px;
+}
+
+.property-card .card-title a {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .property-card .card-title > a:is(:hover, :focus) {
@@ -1035,7 +1043,7 @@ nav ul li a {
     box-shadow: var(--shadow-2);
 }
 .navigation-select-btn .btn-text {
-    font-size: 17px;
+    font-size: 1.28rem;
     font-weight: 400;
     color: #333;
 }
@@ -1043,6 +1051,8 @@ nav ul li a {
     display: flex;
     height: 21px;
     width: 21px;
+    min-height: 21px;
+    min-width: 21px;
     color: #fff;
     font-size: 14px;
     border-radius: 50%;
@@ -1050,6 +1060,7 @@ nav ul li a {
     align-items: center;
     justify-content: center;
     transition: 0.3s;
+    margin-left: 10px;
 }
 .navigation-select-btn.open .arrow-dwn {
     transform: rotate(-180deg);
@@ -1081,7 +1092,7 @@ nav ul li a {
     background-color: #e7edfe;
 }
 .navigation-item .navigation-item-text {
-    font-size: 16px;
+    font-size: 1.28rem;
     font-weight: 400;
     color: #333;
 }
@@ -1089,8 +1100,8 @@ nav ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 16px;
-    width: 16px;
+    height: 12.8px;
+    width: auto;
     border-radius: 4px;
     margin-right: 12px;
     border: 1.5px solid #c0c0c0;
@@ -1168,7 +1179,7 @@ nav ul li a {
 }
 .tabs-box .tab {
     cursor: pointer;
-    font-size: 1.18rem;
+    font-size: 1.28rem;
     white-space: nowrap;
     padding: 13px 20px;
     border-radius: 16px;
@@ -1176,6 +1187,7 @@ nav ul li a {
     background-color: #fff;
     box-shadow: var(--shadow-2);
     transition: all 0.2s ease-in-out;
+    max-height: 50px;
 }
 .tabs-box .tab:hover {
     background: #e7edfe;
