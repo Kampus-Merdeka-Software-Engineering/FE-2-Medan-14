@@ -169,7 +169,7 @@ const dragging = (e) => {
     if (!isDragging) return;
 
     const x = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
-    const walk = (x - startX) * 0.3; // speed of the drag, adjust as needed
+    const walk = (x - startX) * 0.1; // speed of the drag, adjust as needed
     tabsBox.scrollLeft -= walk;
 
     handleIcons(tabsBox.scrollLeft);
