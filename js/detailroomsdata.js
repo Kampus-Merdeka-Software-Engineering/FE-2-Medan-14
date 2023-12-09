@@ -41,8 +41,7 @@ getRoomInfo(roomId)
         }
 
         if (roomData.roomQty <= 0) {
-            btnBooking.disabled = true;
-            btnBooking.innerHTML = "Not Available";
+            btnBooking.style.display = "none";
         }
 
         // Remove any existing images
