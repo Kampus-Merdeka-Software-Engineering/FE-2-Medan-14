@@ -1254,6 +1254,10 @@ nav ul li a {
         justify-content: center;
         margin-bottom: 20px;
     }
+
+    .form-container {
+        margin-top: 50px;
+    }
 }
 
 /**
