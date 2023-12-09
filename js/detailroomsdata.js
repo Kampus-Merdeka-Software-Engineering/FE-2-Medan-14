@@ -94,7 +94,7 @@ getRoomReviewsInfo(roomId)
 
         roomReviewsData = data.bookings[0];
 
-        reviewCount.innerHTML = `Showing 1/${roomReviewsData.reviews.length} Reviews`;
+        reviewCount.innerHTML = `Showing 1/${data.bookings.length} Reviews`;
         reviewUserPhoto.src = `data:image/png;base64,${roomReviewsData.user.photo}`;
         reviewUserName.innerHTML = roomReviewsData.user.name;
         reviewDate.innerHTML = roomReviewsData.updatedAt.toISOString().slice(0, 10);
