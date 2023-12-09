@@ -5,6 +5,14 @@ if (!roomId) {
     window.history.back();
 }
 
+btnBooking.addEventListener("click", () => {
+    window.location.href = `formbookings.html?roomId=${roomId}`;
+});
+
+btnViewComment.addEventListener("click", () => {
+    window.location.href = `reviews.html?roomId=${roomId}`;
+});
+
 const photoDisplay = document.getElementById("photoDisplay");
 const photoSelect = document.getElementById("photoSelect");
 const roomName = document.getElementById("roomName");
@@ -111,10 +119,6 @@ getRoomInfo(roomId)
         }
 
         window.addEventListener("resize", slideImage);
-
-        btnBooking.addEventListener("click", () => {
-            window.location.href = `formbookings.html?roomId=${roomId}`;
-        });
     })
     .catch((error) => {
         console.error("Error:", error);
@@ -135,10 +139,6 @@ getRoomReviewsInfo(roomId)
         reviewDate.innerHTML = new Date(roomReviewsData.updatedAt).toISOString().slice(0, 10);
         setRatingReviews(roomReviewsData.rating);
         reviewText.innerHTML = roomReviewsData.review;
-
-        btnViewComment.addEventListener("click", () => {
-            window.location.href = `reviews.html?roomId=${roomId}`;
-        });
     })
     .catch((error) => {
         console.error("Error:", error);
