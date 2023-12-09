@@ -1498,17 +1498,3 @@ input[type="radio"] {
 .error-message {
     padding: 2.5%;
 }
-
-/*-----------------------------------*\
-  #MEDIA QUERIES
-\*-----------------------------------*/
-
-@media (max-width: 527px) {
-    /**
-   * REUSED STYLE
-   */
-
-    nav ul {
-        display: none;
-    }
-}
