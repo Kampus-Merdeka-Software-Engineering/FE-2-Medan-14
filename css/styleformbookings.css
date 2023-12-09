@@ -917,19 +917,33 @@ article {
     font-weight: var(--fw-700);
 }
 
-/*Responsive*/
-@media screen and (max-width: 500px) {
-    .form .column {
-        flex-wrap: wrap;
-    }
-    .form :where(.gender-option, .gender) {
-        row-gap: 15px;
-    }
-}
-
 /*-----------------------------------*\
   #MEDIA QUERIES
 \*-----------------------------------*/
+
+@media (max-width: 574px) {
+    /**
+   * REUSED STYLE
+   */
+
+    .container {
+        max-width: 94%;
+        width: 100%;
+        margin-inline: auto;
+    }
+
+    .container-form {
+        display: block;
+    }
+
+    .image-box {
+        width: 100%;
+    }
+
+    .image-box img {
+        max-width: 100%;
+    }
+}
 
 /**
  * responsive for large than 575px screen
@@ -944,6 +958,18 @@ article {
         max-width: 540px;
         width: 100%;
         margin-inline: auto;
+    }
+
+    .container-form {
+        display: block;
+    }
+
+    .image-box {
+        width: 100%;
+    }
+
+    .image-box img {
+        max-width: 100%;
     }
 }
 
