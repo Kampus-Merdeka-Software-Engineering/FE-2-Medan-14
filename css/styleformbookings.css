@@ -975,6 +975,10 @@ article {
     .image-box img {
         max-width: 100%;
     }
+
+    .form {
+        margin-bottom: 15px;
+    }
 }
 
 /**
