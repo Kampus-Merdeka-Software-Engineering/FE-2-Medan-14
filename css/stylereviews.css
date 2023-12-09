@@ -1060,13 +1060,13 @@ nav ul li a {
    */
 
     .container {
-        max-width: 100%;
+        max-width: 94%;
         width: 100%;
         margin-inline: auto;
     }
 
     .testimonial-card {
-        max-width: 100%;
+        max-width: 94%;
         width: 100%;
         margin-inline: auto;
     }
