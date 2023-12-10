@@ -969,6 +969,10 @@ nav ul li a {
         grid-template-columns: 1fr 1fr;
     }
 
+    .img-showcase {
+        justify-content: center;
+    }
+
     /**
    * HEADER
    */
