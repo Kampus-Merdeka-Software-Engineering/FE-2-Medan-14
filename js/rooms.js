@@ -146,14 +146,17 @@ function sortPropertyCards(criteria) {
 
 tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-        // Remove the 'active' class from all tabs
-        tabs.forEach((tab) => tab.classList.remove("active"));
+        // Check if isDragging is false
+        if (!isDragging) {
+            // Remove the 'active' class from all tabs
+            tabs.forEach((tab) => tab.classList.remove("active"));
 
-        // Add the 'active' class to the clicked tab
-        tab.classList.add("active");
+            // Add the 'active' class to the clicked tab
+            tab.classList.add("active");
 
-        // Sort the property cards
-        sortPropertyCards(tab.textContent);
+            // Sort the property cards
+            sortPropertyCards(tab.textContent);
+        }
     });
 });
 
