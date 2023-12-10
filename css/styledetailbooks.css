@@ -921,6 +921,10 @@ nav ul li a {
         margin-top: 125px;
         margin-bottom: 45px;
     }
+
+    .img-showcase img {
+        max-width: 100%;
+    }
 }
 
 @media (min-width: 575px) {
@@ -937,6 +941,10 @@ nav ul li a {
     .card {
         margin-top: 125px;
         margin-bottom: 45px;
+    }
+
+    .img-showcase img {
+        max-width: 100%;
     }
 }
 
