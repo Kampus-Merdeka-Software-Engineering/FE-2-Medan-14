@@ -170,6 +170,9 @@ const startDragging = (e) => {
 };
 
 const dragging = (e) => {
+    // Check if the mouse button is not pressed
+    if (e.buttons !== 1) return;
+
     const x = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
     const y = e.type === "mousemove" ? e.clientY : e.touches[0].clientY;
 
@@ -186,7 +189,6 @@ const dragging = (e) => {
 
     handleIcons(tabsBox.scrollLeft);
 };
-
 const dragStop = () => {
     isDragging = false;
     tabsBox.classList.remove("dragging");
