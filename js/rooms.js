@@ -180,7 +180,9 @@ const dragging = (e) => {
 };
 
 const dragStop = () => {
-    isDragging = false;
+    setTimeout(() => {
+        isDragging = false;
+    }, 100); // delay in milliseconds
     tabsBox.classList.remove("dragging");
 };
 
