@@ -145,11 +145,15 @@ function toggleMenu() {
  * PROFILE NAVBAR
  */
 
-getProfileInfo().then((profileInfo) => {
-    document.getElementById("userNameNav").innerHTML = profileInfo.name;
+let isIndexPage = window.location.href === "https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14/" || window.location.pathname.endsWith("index.html");
 
-    let userPhoto = document.getElementById("userPhotoNav");
-    let userPhotoNavbar = document.getElementById("userPhotoNavbar");
-    userPhoto.src = `data:image/png;base64,${profileInfo.photo}`;
-    userPhotoNavbar.src = `data:image/png;base64,${profileInfo.photo}`;
-});
+if (!isIndexPage) {
+    getProfileInfo().then((profileInfo) => {
+        document.getElementById("userNameNav").innerHTML = profileInfo.name;
+
+        let userPhoto = document.getElementById("userPhotoNav");
+        let userPhotoNavbar = document.getElementById("userPhotoNavbar");
+        userPhoto.src = `data:image/png;base64,${profileInfo.photo}`;
+        userPhotoNavbar.src = `data:image/png;base64,${profileInfo.photo}`;
+    });
+}

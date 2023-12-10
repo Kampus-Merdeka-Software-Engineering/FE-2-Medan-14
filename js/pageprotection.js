@@ -1,7 +1,7 @@
 checkLogin().then((isLoggedIn) => {
-    isIndexPage = window.location.href === "https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14/" || window.location.pathname.endsWith("index.html");
-    isLoginPage = window.location.pathname.endsWith("login.html");
-    isSignupPage = window.location.pathname.endsWith("signup.html");
+    let isIndexPage = window.location.href === "https://kampus-merdeka-software-engineering.github.io/FE-2-Medan-14/" || window.location.pathname.endsWith("index.html");
+    let isLoginPage = window.location.pathname.endsWith("login.html");
+    let isSignupPage = window.location.pathname.endsWith("signup.html");
 
     if (!isLoggedIn) {
         if (!isIndexPage && !isLoginPage && !isSignupPage) {
