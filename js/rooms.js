@@ -162,17 +162,25 @@ tabs.forEach((tab) => {
 });
 
 let startX;
+let startY;
 
 const startDragging = (e) => {
-    isDragging = true;
-    tabsBox.classList.add("dragging");
     startX = e.type === "mousedown" ? e.clientX : e.touches[0].clientX;
+    startY = e.type === "mousedown" ? e.clientY : e.touches[0].clientY;
 };
 
 const dragging = (e) => {
+    const x = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
+    const y = e.type === "mousemove" ? e.clientY : e.touches[0].clientY;
+
+    // Check if the mouse or touch has moved a certain distance
+    if (Math.abs(x - startX) > 10 || Math.abs(y - startY) > 10) {
+        isDragging = true;
+        tabsBox.classList.add("dragging");
+    }
+
     if (!isDragging) return;
 
-    const x = e.type === "mousemove" ? e.clientX : e.touches[0].clientX;
     const walk = (x - startX) * 0.1; // speed of the drag, adjust as needed
     tabsBox.scrollLeft -= walk;
 
@@ -180,9 +188,7 @@ const dragging = (e) => {
 };
 
 const dragStop = () => {
-    setTimeout(() => {
-        isDragging = false;
-    }, 100); // delay in milliseconds
+    isDragging = false;
     tabsBox.classList.remove("dragging");
 };
 
