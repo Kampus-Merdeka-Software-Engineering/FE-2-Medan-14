@@ -148,6 +148,7 @@ tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
         // Check if isDragging is false
         if (!isDragging) {
+            console.log("clicked");
             // Remove the 'active' class from all tabs
             tabs.forEach((tab) => tab.classList.remove("active"));
 
