@@ -198,3 +198,5 @@ tabsBox.addEventListener("mousemove", dragging);
 tabsBox.addEventListener("touchmove", dragging);
 document.addEventListener("mouseup", dragStop);
 document.addEventListener("touchend", dragStop);
+window.addEventListener("mouseup", dragStop);
+window.addEventListener("mouseleave", dragStop);
